@@ -1,0 +1,1755 @@
+{
+  "publicRoutes": [
+    {
+      "path": "/api/auth/register",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/auth/login",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/auth/mfa/verify-login",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/auth/forgot-password",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/auth/reset-password",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/auth/verify-email",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/auth/refresh-token",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": []
+    },
+    {
+      "path": "/api/mfa/verify",
+      "methods": "POST",
+      "router": "mfa",
+      "middleware": []
+    },
+    {
+      "path": "/api/mfa/backup-codes/verify",
+      "methods": "POST",
+      "router": "mfa",
+      "middleware": []
+    },
+    {
+      "path": "/api/users/",
+      "methods": "GET",
+      "router": "users",
+      "middleware": []
+    },
+    {
+      "path": "/api/users/:id",
+      "methods": "GET",
+      "router": "users",
+      "middleware": []
+    },
+    {
+      "path": "/api/users/:id",
+      "methods": "PUT",
+      "router": "users",
+      "middleware": []
+    },
+    {
+      "path": "/api/users/:id/avatar",
+      "methods": "POST",
+      "router": "users",
+      "middleware": []
+    },
+    {
+      "path": "/api/users/:id/dashboard",
+      "methods": "GET",
+      "router": "users",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id",
+      "methods": "PUT",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id",
+      "methods": "DELETE",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id/images",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id/images/:imageIndex",
+      "methods": "DELETE",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id/inquire",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/search/map",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/import",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/export",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/template",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:id/documents",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:propertyId/leases",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:propertyId/leases",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:propertyId/debt",
+      "methods": "GET",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/properties/:propertyId/debt",
+      "methods": "POST",
+      "router": "properties",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/",
+      "methods": "GET",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id",
+      "methods": "GET",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/",
+      "methods": "POST",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id",
+      "methods": "PUT",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id",
+      "methods": "DELETE",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id/activities",
+      "methods": "POST",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id/activities",
+      "methods": "GET",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id/assign",
+      "methods": "POST",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/search/qualified",
+      "methods": "GET",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id/avatar",
+      "methods": "POST",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/contacts/:id/avatar",
+      "methods": "DELETE",
+      "router": "contacts",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/",
+      "methods": "GET",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id",
+      "methods": "GET",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/",
+      "methods": "POST",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id",
+      "methods": "PUT",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id",
+      "methods": "DELETE",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id/assign",
+      "methods": "POST",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id/matching-properties",
+      "methods": "GET",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/search/investors",
+      "methods": "GET",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id/logo",
+      "methods": "POST",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/companies/:id/logo",
+      "methods": "DELETE",
+      "router": "companies",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/:id",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/",
+      "methods": "POST",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/:id",
+      "methods": "PUT",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/:id",
+      "methods": "DELETE",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/:id/stage",
+      "methods": "POST",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/pipeline/summary",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/search/overdue",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/search/closing-soon",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/commission/tracking",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/pipeline/visualization",
+      "methods": "GET",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/deals/:id/activity",
+      "methods": "POST",
+      "router": "deals",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/",
+      "methods": "GET",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/:id",
+      "methods": "GET",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/",
+      "methods": "POST",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/:id",
+      "methods": "PUT",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/:id",
+      "methods": "DELETE",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/:id/complete",
+      "methods": "POST",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/my/dashboard",
+      "methods": "GET",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/tasks/search/overdue",
+      "methods": "GET",
+      "router": "tasks",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/",
+      "methods": "GET",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/:id",
+      "methods": "GET",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/upload",
+      "methods": "POST",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/:id",
+      "methods": "PUT",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/:id",
+      "methods": "DELETE",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/:id/download",
+      "methods": "GET",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/:id/share",
+      "methods": "POST",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/documents/search/expiring",
+      "methods": "GET",
+      "router": "documents",
+      "middleware": []
+    },
+    {
+      "path": "/api/reports/dashboard",
+      "methods": "GET",
+      "router": "reports",
+      "middleware": []
+    },
+    {
+      "path": "/api/reports/sales-pipeline",
+      "methods": "GET",
+      "router": "reports",
+      "middleware": []
+    },
+    {
+      "path": "/api/reports/property-performance",
+      "methods": "GET",
+      "router": "reports",
+      "middleware": []
+    },
+    {
+      "path": "/api/reports/lead-analysis",
+      "methods": "GET",
+      "router": "reports",
+      "middleware": []
+    },
+    {
+      "path": "/api/reports/activity-summary",
+      "methods": "GET",
+      "router": "reports",
+      "middleware": []
+    },
+    {
+      "path": "/api/reports/revenue-forecast",
+      "methods": "GET",
+      "router": "reports",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/twilio/call",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/twilio/sms",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/mailchimp/sync-contact",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/google-maps/geocode",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/mls/search",
+      "methods": "GET",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/docusign/send-envelope",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/webhooks/twilio",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/webhooks/mailchimp",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/integrations/webhooks/docusign",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": []
+    },
+    {
+      "path": "/api/dashboard/",
+      "methods": "GET",
+      "router": "dashboard",
+      "middleware": []
+    },
+    {
+      "path": "/api/dashboard/pipeline",
+      "methods": "GET",
+      "router": "dashboard",
+      "middleware": []
+    },
+    {
+      "path": "/api/dashboard/properties",
+      "methods": "GET",
+      "router": "dashboard",
+      "middleware": []
+    },
+    {
+      "path": "/api/dashboard/activity",
+      "methods": "GET",
+      "router": "dashboard",
+      "middleware": []
+    },
+    {
+      "path": "/api/listings/",
+      "methods": "GET",
+      "router": "listings",
+      "middleware": []
+    },
+    {
+      "path": "/api/listings/availability",
+      "methods": "GET",
+      "router": "listings",
+      "middleware": []
+    },
+    {
+      "path": "/api/listings/:id/marketing-status",
+      "methods": "PUT",
+      "router": "listings",
+      "middleware": []
+    },
+    {
+      "path": "/api/listings/:id/syndicate",
+      "methods": "POST",
+      "router": "listings",
+      "middleware": []
+    },
+    {
+      "path": "/api/listings/:id/performance",
+      "methods": "GET",
+      "router": "listings",
+      "middleware": []
+    },
+    {
+      "path": "/api/investors/",
+      "methods": "GET",
+      "router": "investors",
+      "middleware": []
+    },
+    {
+      "path": "/api/investors/match",
+      "methods": "POST",
+      "router": "investors",
+      "middleware": []
+    },
+    {
+      "path": "/api/investors/distribute",
+      "methods": "POST",
+      "router": "investors",
+      "middleware": []
+    },
+    {
+      "path": "/api/investors/engagement",
+      "methods": "GET",
+      "router": "investors",
+      "middleware": []
+    },
+    {
+      "path": "/api/investors/:id/criteria",
+      "methods": "PUT",
+      "router": "investors",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketData/property-details",
+      "methods": "GET",
+      "router": "marketData",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketData/comparables",
+      "methods": "GET",
+      "router": "marketData",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketData/trends",
+      "methods": "GET",
+      "router": "marketData",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketData/submarket-analysis",
+      "methods": "GET",
+      "router": "marketData",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketData/enhanced-search",
+      "methods": "GET",
+      "router": "marketData",
+      "middleware": []
+    },
+    {
+      "path": "/api/upload/image",
+      "methods": "POST",
+      "router": "upload",
+      "middleware": []
+    },
+    {
+      "path": "/api/upload/document",
+      "methods": "POST",
+      "router": "upload",
+      "middleware": []
+    },
+    {
+      "path": "/api/upload/avatar",
+      "methods": "POST",
+      "router": "upload",
+      "middleware": []
+    },
+    {
+      "path": "/api/upload/property-images",
+      "methods": "POST",
+      "router": "upload",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/",
+      "methods": "GET",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/unread-count",
+      "methods": "GET",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/:id",
+      "methods": "GET",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/",
+      "methods": "POST",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/:id",
+      "methods": "PATCH",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/mark-all-read",
+      "methods": "POST",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/notifications/:id",
+      "methods": "DELETE",
+      "router": "notifications",
+      "middleware": []
+    },
+    {
+      "path": "/api/communications/calls",
+      "methods": "POST",
+      "router": "communications",
+      "middleware": []
+    },
+    {
+      "path": "/api/communications/calls",
+      "methods": "GET",
+      "router": "communications",
+      "middleware": []
+    },
+    {
+      "path": "/api/communications/emails",
+      "methods": "POST",
+      "router": "communications",
+      "middleware": []
+    },
+    {
+      "path": "/api/communications/emails",
+      "methods": "GET",
+      "router": "communications",
+      "middleware": []
+    },
+    {
+      "path": "/api/import/properties",
+      "methods": "POST",
+      "router": "import",
+      "middleware": []
+    },
+    {
+      "path": "/api/import/contacts",
+      "methods": "POST",
+      "router": "import",
+      "middleware": []
+    },
+    {
+      "path": "/api/import/template/:type",
+      "methods": "GET",
+      "router": "import",
+      "middleware": []
+    },
+    {
+      "path": "/api/leases/",
+      "methods": "GET",
+      "router": "leases",
+      "middleware": []
+    },
+    {
+      "path": "/api/leases/:id",
+      "methods": "GET",
+      "router": "leases",
+      "middleware": []
+    },
+    {
+      "path": "/api/leases/",
+      "methods": "POST",
+      "router": "leases",
+      "middleware": []
+    },
+    {
+      "path": "/api/leases/:id",
+      "methods": "PUT",
+      "router": "leases",
+      "middleware": []
+    },
+    {
+      "path": "/api/leases/:id",
+      "methods": "DELETE",
+      "router": "leases",
+      "middleware": []
+    },
+    {
+      "path": "/api/leases/expiring/soon",
+      "methods": "GET",
+      "router": "leases",
+      "middleware": []
+    },
+    {
+      "path": "/api/debt/",
+      "methods": "GET",
+      "router": "debt",
+      "middleware": []
+    },
+    {
+      "path": "/api/debt/:id",
+      "methods": "GET",
+      "router": "debt",
+      "middleware": []
+    },
+    {
+      "path": "/api/debt/",
+      "methods": "POST",
+      "router": "debt",
+      "middleware": []
+    },
+    {
+      "path": "/api/debt/:id",
+      "methods": "PUT",
+      "router": "debt",
+      "middleware": []
+    },
+    {
+      "path": "/api/debt/:id",
+      "methods": "DELETE",
+      "router": "debt",
+      "middleware": []
+    },
+    {
+      "path": "/api/debt/maturing/soon",
+      "methods": "GET",
+      "router": "debt",
+      "middleware": []
+    },
+    {
+      "path": "/api/triggers/",
+      "methods": "GET",
+      "router": "triggers",
+      "middleware": []
+    },
+    {
+      "path": "/api/triggers/:id",
+      "methods": "GET",
+      "router": "triggers",
+      "middleware": []
+    },
+    {
+      "path": "/api/triggers/:id/dismiss",
+      "methods": "PUT",
+      "router": "triggers",
+      "middleware": []
+    },
+    {
+      "path": "/api/triggers/:id/action",
+      "methods": "PUT",
+      "router": "triggers",
+      "middleware": []
+    },
+    {
+      "path": "/api/triggers/:id",
+      "methods": "DELETE",
+      "router": "triggers",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/search/by-name",
+      "methods": "GET",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/",
+      "methods": "GET",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/:id",
+      "methods": "GET",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/",
+      "methods": "POST",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/:id",
+      "methods": "PUT",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/:id",
+      "methods": "DELETE",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/:id/properties",
+      "methods": "GET",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/entities/:id/relationships",
+      "methods": "GET",
+      "router": "entities",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/",
+      "methods": "GET",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/:id",
+      "methods": "GET",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/",
+      "methods": "POST",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/:id",
+      "methods": "PUT",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/:id",
+      "methods": "DELETE",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/property/:propertyId",
+      "methods": "GET",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/entity/:entityId",
+      "methods": "GET",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyOwnerships/validate/:propertyId",
+      "methods": "GET",
+      "router": "propertyOwnerships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/",
+      "methods": "GET",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/validate",
+      "methods": "GET",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/entity/:entityId",
+      "methods": "GET",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/entity/:entityId/graph",
+      "methods": "GET",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/:id",
+      "methods": "GET",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/",
+      "methods": "POST",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/:id",
+      "methods": "PUT",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/entityRelationships/:id",
+      "methods": "DELETE",
+      "router": "entityRelationships",
+      "middleware": []
+    },
+    {
+      "path": "/api/ownershipGraph/property/:propertyId",
+      "methods": "GET",
+      "router": "ownershipGraph",
+      "middleware": []
+    },
+    {
+      "path": "/api/ownershipGraph/entity/:entityId/portfolio",
+      "methods": "GET",
+      "router": "ownershipGraph",
+      "middleware": []
+    },
+    {
+      "path": "/api/ownershipGraph/entity/:entityId/network",
+      "methods": "GET",
+      "router": "ownershipGraph",
+      "middleware": []
+    },
+    {
+      "path": "/api/ownershipGraph/common-owners",
+      "methods": "GET",
+      "router": "ownershipGraph",
+      "middleware": []
+    },
+    {
+      "path": "/api/ownershipGraph/concentration",
+      "methods": "GET",
+      "router": "ownershipGraph",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/",
+      "methods": "GET",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/",
+      "methods": "POST",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/stats",
+      "methods": "GET",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/:id",
+      "methods": "GET",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/:id",
+      "methods": "PUT",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/:id",
+      "methods": "DELETE",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/:id/contacts",
+      "methods": "GET",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/:id/recalculate",
+      "methods": "POST",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/preview",
+      "methods": "POST",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/cohorts/:id/stats",
+      "methods": "GET",
+      "router": "cohorts",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/",
+      "methods": "GET",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id",
+      "methods": "GET",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id",
+      "methods": "PUT",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id",
+      "methods": "DELETE",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/send",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/schedule",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/pause",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/resume",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/cancel",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/recipients",
+      "methods": "GET",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/analytics",
+      "methods": "GET",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/campaigns/:id/duplicate",
+      "methods": "POST",
+      "router": "campaigns",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/analyze",
+      "methods": "POST",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/comparables",
+      "methods": "POST",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/trends",
+      "methods": "POST",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/demographics",
+      "methods": "POST",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/summary/:location",
+      "methods": "GET",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/metrics",
+      "methods": "GET",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/report",
+      "methods": "POST",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/alerts",
+      "methods": "GET",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/marketAnalysis/subscribe",
+      "methods": "POST",
+      "router": "marketAnalysis",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/match",
+      "methods": "POST",
+      "router": "propertyMatching",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/bulk-match",
+      "methods": "POST",
+      "router": "propertyMatching",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/saved-search",
+      "methods": "POST",
+      "router": "propertyMatching",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/saved-searches/:contactId",
+      "methods": "GET",
+      "router": "propertyMatching",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/rate-property",
+      "methods": "POST",
+      "router": "propertyMatching",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/recommendations/:contactId",
+      "methods": "GET",
+      "router": "propertyMatching",
+      "middleware": []
+    },
+    {
+      "path": "/api/propertyMatching/analytics/:contactId",
+      "methods": "GET",
+      "router": "propertyMatching",
+      "middleware": []
+    }
+  ],
+  "authOnlyRoutes": [
+    {
+      "path": "/api/auth/me",
+      "methods": "GET",
+      "router": "auth",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/auth/me",
+      "methods": "PUT",
+      "router": "auth",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/auth/change-password",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/auth/logout",
+      "methods": "POST",
+      "router": "auth",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/auth/check-mfa-status",
+      "methods": "GET",
+      "router": "auth",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/mfa/setup",
+      "methods": "POST",
+      "router": "mfa",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/mfa/verify-setup",
+      "methods": "POST",
+      "router": "mfa",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/mfa/backup-codes/generate",
+      "methods": "POST",
+      "router": "mfa",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/mfa/disable",
+      "methods": "POST",
+      "router": "mfa",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/mfa/status",
+      "methods": "GET",
+      "router": "mfa",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/categories",
+      "methods": "GET",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/preview",
+      "methods": "POST",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/",
+      "methods": "GET",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/",
+      "methods": "POST",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/:id",
+      "methods": "GET",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/:id",
+      "methods": "PUT",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/:id",
+      "methods": "DELETE",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    },
+    {
+      "path": "/api/campaignTemplates/:id/duplicate",
+      "methods": "POST",
+      "router": "campaignTemplates",
+      "middleware": [
+        "auth"
+      ]
+    }
+  ],
+  "protectedRoutes": [
+    {
+      "path": "/api/users/",
+      "methods": "POST",
+      "router": "users",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/users/:id",
+      "methods": "DELETE",
+      "router": "users",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/users/:id/activate",
+      "methods": "POST",
+      "router": "users",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/integrations/slack/notify",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/integrations/quickbooks/sync-contact",
+      "methods": "POST",
+      "router": "integrations",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/integrations/status",
+      "methods": "GET",
+      "router": "integrations",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/overview",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/analytics",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users/:id",
+      "methods": "PUT",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users/:id",
+      "methods": "DELETE",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users/:id/roles",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users/:id/roles/:roleId",
+      "methods": "DELETE",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users/:id/teams",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/users/:id/teams/:teamId",
+      "methods": "DELETE",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/teams",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/teams",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/teams/:id",
+      "methods": "PUT",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/teams/:id",
+      "methods": "DELETE",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/roles",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/roles",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/roles/:id",
+      "methods": "PUT",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/roles/:id",
+      "methods": "DELETE",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/permissions",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/roles/:id/permissions",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/roles/:id/permissions/:permissionId",
+      "methods": "DELETE",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/backup",
+      "methods": "POST",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/backup/list",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/users",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/properties",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/contacts",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/deals",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/companies",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/all",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    },
+    {
+      "path": "/api/admin/export/list",
+      "methods": "GET",
+      "router": "admin",
+      "middleware": [
+        "adminOnly"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "route": "propertyAlerts",
+      "error": "nodemailer.createTransporter is not a function"
+    }
+  ],
+  "summary": {
+    "total": 271,
+    "public": 217,
+    "authOnly": 18,
+    "protected": 36,
+    "errors": 1
+  }
+}

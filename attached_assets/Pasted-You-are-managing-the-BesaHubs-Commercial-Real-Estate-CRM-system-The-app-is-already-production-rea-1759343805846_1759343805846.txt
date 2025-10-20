@@ -1,0 +1,48 @@
+You are managing the BesaHubs Commercial Real Estate CRM system.  
+The app is already production-ready with JWT authentication, bcrypt, audit logging, XSS sanitization, CORS, and rate limiting.  
+
+Your task is to **harden security for production deployment** by implementing the following:
+
+1. **Authentication & Session Security**
+   - Enforce password complexity rules (min 12 chars, upper/lower/number/special).
+   - Add account lockout after 5 failed login attempts with timed cooldown.
+   - Implement refresh token rotation with revocation list (stored in Redis).
+   - Add short-lived JWT access tokens (15 min) with sliding refresh window.
+   - Implement MFA (TOTP with Google Authenticator / Authy) for Admin + Manager roles.
+
+2. **Transport & Config Security**
+   - Enforce HTTPS everywhere (use Helmet HSTS config).
+   - Remove all default demo credentials from production builds.
+   - Store all secrets (JWT_SECRET, DB_PASSWORD, SENDGRID_API_KEY, etc.) in `.env` and require them at runtime.
+   - Ensure no secrets are logged.
+
+3. **API & Input Protection**
+   - Add global request validation schema (celebrate/Joi or Zod).
+   - Sanitize all string inputs (against SQLi, XSS).
+   - Enforce strict CORS whitelist (no wildcard `*` in production).
+   - Add IP-based rate limiting for sensitive endpoints (auth, password reset).
+
+4. **RBAC Hardening**
+   - Verify all endpoints enforce role-based permissions.
+   - Add integration tests ensuring restricted endpoints return 403 if unauthorized.
+   - Create an Admin-only audit log viewer.
+
+5. **Data & Logging**
+   - Add audit log immutability (append-only, no delete).
+   - Mask sensitive fields (password, tokens, SSN, etc.) in logs.
+   - Encrypt PII fields in database at rest (Postgres pgcrypto or KMS integration).
+
+6. **Monitoring & Alerts**
+   - Implement structured error logging (winston + JSON logs).
+   - Add admin dashboard for failed login attempts, unusual activity, and rate-limit triggers.
+   - Send alerts on suspicious activity (multiple IPs for one user, excessive failed logins).
+
+7. **Testing & Compliance**
+   - Add automated security tests (OWASP checks: SQLi, XSS, CSRF).
+   - Add dependency scanning for NPM packages (npm audit / Snyk).
+   - Ensure GDPR workflows: “export my data” + “delete my account” endpoints actually delete/export user data.
+
+### Deliverables
+- Update backend middleware for these security features.
+- Write docs in `/docs/security.md` explaining each feature.
+- Confirm app still builds, compiles, and runs clean after updates.

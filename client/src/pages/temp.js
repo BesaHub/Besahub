@@ -1,0 +1,1 @@
+import React from "react"; import { Box, Typography, Paper } from "@mui/material"; const Placeholder = () => <Box><Typography variant="h4" sx={{fontWeight:700,mb:3}}>Coming Soon</Typography><Paper sx={{p:6,textAlign:"center"}}><Typography variant="h6" color="text.secondary">Feature coming soon...</Typography></Paper></Box>; export default Placeholder;

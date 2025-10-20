@@ -1,0 +1,4 @@
+firstName,lastName,email,phone,type,status,company,title,address,city,state,zipCode
+John,Doe,john.doe@example.com,555-123-4567,buyer,active,Acme Corp,CEO,789 Business Ave,Chicago,IL,60601
+Jane,Smith,jane.smith@example.com,555-987-6543,seller,active,Tech Inc,CFO,321 Commerce St,Boston,MA,02101
+Bob,Johnson,bob.johnson@example.com,555-456-7890,lead,active,Startup LLC,Founder,654 Innovation Dr,Austin,TX,78701

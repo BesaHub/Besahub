@@ -1,0 +1,90 @@
+name: Dynamic Security Testing (DAST)
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'Target URL for ZAP scanning'
+        required: true
+        default: 'https://your-app-url.replit.dev'
+  schedule:
+    - cron: '0 3 * * 0'
+
+jobs:
+  owasp-zap-scan:
+    name: OWASP ZAP Security Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set target URL
+      id: target
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "url=${{ github.event.inputs.target_url }}" >> $GITHUB_OUTPUT
+        else
+          echo "url=https://your-app-url.replit.dev" >> $GITHUB_OUTPUT
+        fi
+
+    - name: ZAP Baseline Scan
+      uses: zaproxy/action-baseline@v0.12.0
+      with:
+        target: ${{ steps.target.outputs.url }}
+        rules_file_name: '.zap/rules.tsv'
+        cmd_options: '-a'
+        fail_action: false
+        allow_issue_writing: true
+
+    - name: ZAP Full Scan
+      uses: zaproxy/action-full-scan@v0.10.0
+      with:
+        target: ${{ steps.target.outputs.url }}
+        rules_file_name: '.zap/rules.tsv'
+        cmd_options: '-a -j'
+        fail_action: false
+        allow_issue_writing: true
+
+    - name: Upload ZAP reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: zap-scan-reports
+        path: |
+          zap-baseline-report.html
+          zap-full-report.html
+          zap-baseline-report.json
+          zap-full-report.json
+
+    - name: Check for high-risk vulnerabilities
+      if: always()
+      run: |
+        echo "Analyzing ZAP scan results for high-risk vulnerabilities..."
+        
+        # High-risk is riskcode "3" in ZAP JSON
+        if [ -f zap-baseline-report.json ]; then
+          HIGH_RISK=$(jq '[.site[].alerts[] | select(.riskcode == "3")] | length' zap-baseline-report.json 2>/dev/null || echo "0")
+          echo "Baseline scan - High-risk vulnerabilities: $HIGH_RISK"
+          
+          if [ "$HIGH_RISK" != "0" ]; then
+            echo "⚠️ WARNING: Found $HIGH_RISK high-risk vulnerabilities in baseline scan"
+            jq -r '.site[].alerts[] | select(.riskcode == "3") | "- \(.alert) (Risk: \(.risk), Confidence: \(.confidence))"' zap-baseline-report.json
+          fi
+        fi
+        
+        if [ -f zap-full-report.json ]; then
+          HIGH_RISK=$(jq '[.site[].alerts[] | select(.riskcode == "3")] | length' zap-full-report.json 2>/dev/null || echo "0")
+          echo "Full scan - High-risk vulnerabilities: $HIGH_RISK"
+          
+          if [ "$HIGH_RISK" != "0" ]; then
+            echo "❌ FAILED: Found $HIGH_RISK high-risk vulnerabilities in full scan"
+            jq -r '.site[].alerts[] | select(.riskcode == "3") | "- \(.alert) (Risk: \(.risk), Confidence: \(.confidence))"' zap-full-report.json
+            exit 1
+          fi
+        fi
+        
+        echo "✅ PASSED: No high-risk vulnerabilities found"

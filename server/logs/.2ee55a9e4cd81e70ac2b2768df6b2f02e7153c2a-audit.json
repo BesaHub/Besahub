@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 90
+    },
+    "auditLog": "/Users/gabelorja/Documents/BesaHub/server/logs/.2ee55a9e4cd81e70ac2b2768df6b2f02e7153c2a-audit.json",
+    "files": [
+        {
+            "date": 1760894181452,
+            "name": "/Users/gabelorja/Documents/BesaHub/server/logs/error-2025-10-19.log",
+            "hash": "e1f04a8bcb238cb33b8bd9143c8c2c7948e644572f5ac7a85a0b8c1ed139af81"
+        },
+        {
+            "date": 1760911419270,
+            "name": "/Users/gabelorja/Documents/BesaHub/server/logs/error-2025-10-20.log",
+            "hash": "f0521fd3de2172d17530d9c6326842041e2c4d9ef0245e51fe4b18fa2cfb7880"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,246 @@
+You are the lead engineer on BesaHubs CRM (Commercial Real Estate CRM). The repo already contains:
+Frontend: React 18 + MUI + React Router v6 + React Query + Recharts/Chart.js + React Hook Form + Socket.IO client
+Backend: Node.js + Express + Sequelize + PostgreSQL (Neon) + JWT auth (access/refresh) + RBAC + Socket.IO
+Infra: Cloudinary, Redis (optional), SendGrid infra placeholder
+Security: Helmet, CORS allowlist, Turnstile CAPTCHA, audit logging
+Core modules: Properties, Contacts, Companies, Deals, Tasks, Agents, Campaigns, Auth/Security, Notifications
+🎯 Phase 1 Objectives (build now)
+SendGrid Email (Transactional + Marketing) — Full Integration
+Calendar Sync (Google + Microsoft 365) — Events, Booking Links
+Custom Dashboard & Report Builder — Saveable, Shareable Widgets
+Deliver production-ready code with tests, seed data, docs, and feature flags.
+✅ Global Acceptance Criteria
+Passes ESLint and existing tests; add new tests.
+Works on Replit with one-click run; includes clear README Phase 1 section.
+RBAC-aware (admin/manager/agent).
+All secrets via .env; no hard-coded secrets.
+Database migrations + seeds included; safe to run on an existing DB.
+Clear API contracts and Postman collection (export to /docs/postman/BesaHubs-Phase1.postman_collection.json).
+Telemetry/logging for errors and key actions.
+Feature flags via config/flags.ts so we can toggle: SENDGRID_ENABLED, CALENDAR_ENABLED, DASHBOARDS_ENABLED.
+📦 ENV Vars (add to .env.example)
+# Core
+DATABASE_URL=postgres://...
+JWT_ACCESS_SECRET=...
+JWT_REFRESH_SECRET=...
+NODE_ENV=development
+
+# SendGrid
+SENDGRID_API_KEY=...
+SENDGRID_FROM_EMAIL=noreply@besahubs.com
+SENDGRID_FROM_NAME=BesaHubs
+SENDGRID_WEBHOOK_SIGNING_KEY=...   # event webhook verification
+SENDGRID_TEMPLATE_INVITE=...
+SENDGRID_TEMPLATE_PASSWORD_RESET=...
+SENDGRID_TEMPLATE_PROPERTY_PROMO=...
+
+# Google Calendar
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+GOOGLE_REDIRECT_URI=https://<your-replit-url>/api/integrations/google/callback
+
+# Microsoft 365 (Graph)
+MS_CLIENT_ID=...
+MS_CLIENT_SECRET=...
+MS_REDIRECT_URI=https://<your-replit-url>/api/integrations/microsoft/callback
+MS_TENANT_ID=common   # or specific tenant
+
+# Public URLs
+APP_BASE_URL=https://<your-replit-url>
+API_BASE_URL=https://<your-replit-url>/api
+🗄️ Database: New/Updated Sequelize Models + Migrations
+Create migrations + models for:
+EmailEvent (logs marketing + transactional events)
+id (uuid, pk)
+contactId (fk -> Contacts, nullable)
+campaignId (fk -> Campaigns, nullable)
+messageId (string)
+eventType (enum: processed, delivered, open, click, bounce, dropped, spamreport, unsubscribe)
+eventTimestamp (timestamptz)
+metadata (jsonb) // raw payload
+createdAt/updatedAt
+CalendarAccount
+id (uuid, pk)
+userId (fk -> Users)
+provider (enum: google, microsoft)
+email (string)
+accessToken (encrypted at rest)
+refreshToken (encrypted at rest)
+expiresAt (timestamptz)
+scopes (string array/jsonb)
+createdAt/updatedAt
+CalendarEvent
+id (uuid, pk)
+calendarAccountId (fk)
+externalId (string) // Google/Microsoft id
+title (string)
+description (text)
+start (timestamptz)
+end (timestamptz)
+location (string)
+attendees (jsonb)
+status (enum: confirmed, tentative, cancelled)
+isAllDay (boolean, default false)
+createdAt/updatedAt
+composite unique index: (calendarAccountId, externalId)
+Dashboard
+id (uuid, pk)
+userId (fk -> Users, owner)
+name (string)
+isShared (boolean, default false)
+sharedWith (jsonb array of userIds/role tags)
+layout (jsonb) // positions/sizes of widgets
+createdAt/updatedAt
+Report / Widget (choose one abstraction; we’ll use Widget with a query config)
+id (uuid, pk)
+dashboardId (fk -> Dashboard)
+type (enum: kpi, bar, line, pie, table, funnel)
+dataset (enum: deals, tasks, properties, contacts, campaigns, agents)
+query (jsonb) // filters, groupBy, metrics, date range
+title (string)
+createdAt/updatedAt
+Run migrations, add associations, and register in models/index.ts.
+🧩 Backend — New/Updated Routes & Services
+Create route files under /src/routes and services under /src/services. Add RBAC middleware.
+A) SendGrid Integration
+Routes
+POST /api/integrations/sendgrid/webhook
+Verifies signature.
+Accepts batch events; upsert into EmailEvent.
+If sg_message_id maps to a Campaign and/or Contact, populate campaignId / contactId.
+Emits Socket.IO email:event to user rooms when relevant.
+Services
+services/email/sendgridClient.ts — thin wrapper for SendGrid SDK.
+services/email/send.ts
+sendTransactional({to, templateId, dynamicData})
+sendCampaign({campaignId, listOrFilters, templateId, scheduledAt})
+Records outbound in EmailLogs (already present).
+services/email/mapWebhook.ts — normalize SendGrid events to EmailEvent.
+Acceptance
+Unit tests for webhook signature verification and event parsing.
+E2E test sending a transactional invite to a seeded contact (mock SendGrid).
+B) Calendar Integration (Google + Microsoft)
+OAuth
+GET /api/integrations/google/connect
+GET /api/integrations/google/callback
+GET /api/integrations/microsoft/connect
+GET /api/integrations/microsoft/callback
+Event Sync
+POST /api/calendar/sync (body: accountId) — pull last 90 days + next 60 days.
+GET /api/calendar/events?from=&to=&accountId= — list events.
+POST /api/calendar/events — create (write-back to provider via API; store in DB).
+PUT /api/calendar/events/:id — update (two-way).
+DELETE /api/calendar/events/:id — cancel (two-way).
+Webhooks (optional stretch): provider change notifications (Google push channel / MS Graph subscriptions). If out of scope, skip webhooks for now.
+Services
+services/calendar/google.ts — Google Calendar REST
+services/calendar/microsoft.ts — MS Graph Calendar
+Token refresh logic; store refreshed tokens in CalendarAccount.
+Timezone handling; use user’s tz.
+Acceptance
+Integration tests for OAuth flow (mock providers).
+Unit tests for upsert of CalendarEvent.
+RBAC: user can only access their own CalendarAccount/events unless admin.
+C) Dashboard & Report Builder
+Routes
+GET /api/dashboards (mine + shared)
+POST /api/dashboards
+PUT /api/dashboards/:id
+DELETE /api/dashboards/:id
+GET /api/dashboards/:id/widgets
+POST /api/dashboards/:id/widgets
+PUT /api/widgets/:id
+DELETE /api/widgets/:id
+POST /api/widgets/query
+Accepts { dataset, metrics, groupBy, filters, dateRange }
+Returns { rows, fields, chartData }
+Datasets supported in Phase 1: deals, tasks, properties, contacts, campaigns
+Services
+services/reports/queryEngine.ts — routes queries to per-dataset resolvers:
+datasets/deals.ts, datasets/tasks.ts, etc.
+Implement safe filter parsing; whitelist columns; guard against SQL injection.
+Add caching for heavy queries (Redis if enabled).
+Acceptance
+Unit tests for each dataset resolver.
+Performance: queries return in < 1.5s for 50k rows (use indexes).
+Permissions: data visibility constrained by user role.
+🖥️ Frontend — New UI/UX
+1) Email Activity Timeline
+Contact Detail and Campaign Detail pages:
+New “Email Activity” tab showing a table + mini charts (opens, clicks, bounces) from EmailEvent.
+Realtime updates via Socket.IO email:event.
+2) Calendar
+/calendar route:
+Month/Week/Agenda views (use a lightweight calendar library or custom).
+2-way creation/edit of events.
+“Connect Calendar” buttons (Google/Microsoft) with OAuth.
+Show upcoming meetings on dashboard widget.
+3) Dashboard & Reports
+/dashboards route:
+“My Dashboards” + “Shared With Me”.
+Builder UI using a grid layout (e.g., react-grid-layout).
+Add widget modal (dataset, viz type, filters, date range).
+Supported visuals now: KPI card, Bar, Line, Pie, Table, Funnel.
+Save/rename dashboard; share toggles (by user or role).
+Export to PNG/CSV (CSV for table widgets).
+4) Settings → Integrations
+Page for toggling feature flags (read-only if not admin).
+Connect/disconnect calendar accounts; display connected email/last sync.
+SendGrid status check.
+🔐 Security & Compliance
+Encrypt accessToken and refreshToken fields (AES-256-GCM; keys from env).
+Verify SendGrid webhook signatures.
+Rate limit /api/integrations/* endpoints.
+Extend audit logging to:
+Calendar connect/disconnect, create/update/delete event
+Dashboard create/update/delete
+Widget create/update/delete
+Update SOC 2 evidence folder with: data flow diagrams, key controls, test screenshots.
+🧪 Testing & QA
+Unit tests: services (email, calendar, query engine).
+Integration/E2E:
+Auth + RBAC path
+Dashboard creation + add widgets + query datasets
+Create calendar event → verify on provider (mock) → read back into DB
+Send transactional email (mock) → webhook POST → timeline update via Socket.IO
+Load test (lightweight): widgets/query with large seeded data.
+📚 Docs & DevEx
+Update /README.md with Phase 1 quickstart.
+Add /docs/PHASE1.md including:
+Env setup guide
+OAuth setup steps (Google + Microsoft: app registration, scopes)
+SendGrid setup (dynamic templates, webhook URL)
+API contracts (routes + payloads)
+RBAC matrix for new routes
+Postman collection link
+Add an in-app first-run wizard (admin only) that:
+Checks env vars present
+Prompts to connect calendar
+Prompts to add SendGrid templates
+Creates a “Sales Leader” sample dashboard with 4 widgets
+🗺️ Implementation Plan (branches & PRs)
+feat/sendgrid-integration → email services, webhook, UI timeline
+feat/calendar-sync → OAuth + events + UI calendar
+feat/reporting-dashboards → dashboards/widgets/query engine
+chore/docs-tests-phase1 → docs, seeds, tests, postman
+Each branch with small, reviewable PRs; include screenshots/GIFs.
+🌱 Seed Data Enhancements
+Generate 1000+ fake contacts, 600 deals across 9 stages, 800 tasks, and 1500 email events (synthetic) for demo dashboards.
+Create two users with calendars connected (mock tokens) to showcase events.
+🧰 Developer Notes
+Stick to existing patterns for error responses { data, message, error }.
+Use react-query for all new frontend data hooks with optimistic updates where safe.
+All times in UTC in DB; convert to user timezone in UI.
+Do not block app if Redis is unavailable; just skip cache.
+Deliver the above in working code. When finished, print:
+URLs for new routes (/calendar, /dashboards, /settings/integrations)
+Admin demo creds
+Webhook endpoint URL
+Short verification checklist (send test email → see event; connect calendar → create event; add dashboard widget → see data)
+End of Prompt.
+
+
+
+
+
+ChatGPT can make mistakes. Check important info. See Cookie Preferences.

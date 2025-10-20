@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcre_crm_client=self.webpackChunkcre_crm_client||[]).push([[643],{20643:(c,e,r)=>{r.r(e),r.d(e,{default:()=>l});r(65043);var s=r(70579);const l=()=>(0,s.jsx)("div",{children:"Task Form"})}}]);
+//# sourceMappingURL=643.40d2821e.chunk.js.map

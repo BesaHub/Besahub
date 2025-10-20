@@ -1,0 +1,20 @@
+{
+  "backupId": "backup-2025-10-01-22-15-17",
+  "timestamp": "2025-10-01-22-15-17",
+  "createdAt": "2025-10-01T22:15:23.931Z",
+  "filePath": "backups/backup-2025-10-01-22-15-17.sql.gz.enc",
+  "fileName": "backup-2025-10-01-22-15-17.sql.gz.enc",
+  "fileSize": 26393,
+  "fileSizeFormatted": "25.77 KB",
+  "checksum": "f489d498adf0c2aae58aa28fff89a5917e6781ff00d43d21d8f29db73564afe1",
+  "authTag": "643054225f66c9ac0b6b3d9d72e08399",
+  "iv": "110eb894793885513aa1b08d62186dbf",
+  "encrypted": true,
+  "algorithm": "aes-256-gcm",
+  "retentionExpiresAt": "2026-10-01T22:15:17.000Z",
+  "retentionType": "monthly",
+  "dbInfo": {
+    "url": "ep-wandering-star-adqw56dk.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require",
+    "dumpVersion": "pg_dump (PostgreSQL)"
+  }
+}

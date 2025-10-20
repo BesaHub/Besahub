@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcre_crm_client=self.webpackChunkcre_crm_client||[]).push([[5188],{55188:(e,n,r)=>{r.r(n),r.d(n,{default:()=>l});r(65043);var c=r(96446),s=r(85865),t=r(63336),i=r(70579);const l=()=>(0,i.jsxs)(c.A,{children:[(0,i.jsx)(s.A,{variant:"h4",sx:{fontWeight:700,mb:3},children:"My Profile"}),(0,i.jsx)(t.A,{sx:{p:6,textAlign:"center"},children:(0,i.jsx)(s.A,{variant:"h6",color:"text.secondary",children:"User profile management coming soon..."})})]})}}]);
+//# sourceMappingURL=5188.350173e5.chunk.js.map

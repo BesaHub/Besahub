@@ -1,0 +1,28 @@
+Uncaught runtime errors:
+×
+ERROR
+property.pricePerSquareFoot.toFixed is not a function
+TypeError: property.pricePerSquareFoot.toFixed is not a function
+    at PropertyDetail (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/src_pages_Properties_PropertyDetail_js.chunk.js:1328:63)
+    at renderWithHooks (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:77656:22)
+    at updateFunctionComponent (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:81224:24)
+    at beginWork (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:82943:20)
+    at HTMLUnknownElement.callCallback (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:67912:18)
+    at Object.invokeGuardedCallbackDev (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:67956:20)
+    at invokeGuardedCallback (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:68013:35)
+    at beginWork$1 (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:87912:11)
+    at performUnitOfWork (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:87160:16)
+    at workLoopSync (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:87083:9)
+ERROR
+property.pricePerSquareFoot.toFixed is not a function
+TypeError: property.pricePerSquareFoot.toFixed is not a function
+    at PropertyDetail (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/src_pages_Properties_PropertyDetail_js.chunk.js:1328:63)
+    at renderWithHooks (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:77656:22)
+    at updateFunctionComponent (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:81224:24)
+    at beginWork (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:82943:20)
+    at HTMLUnknownElement.callCallback (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:67912:18)
+    at Object.invokeGuardedCallbackDev (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:67956:20)
+    at invokeGuardedCallback (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:68013:35)
+    at beginWork$1 (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:87912:11)
+    at performUnitOfWork (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:87160:16)
+    at workLoopSync (https://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev/static/js/bundle.js:87083:9)

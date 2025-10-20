@@ -1,0 +1,1117 @@
+{
+  "info": {
+    "name": "BesaHubs CRM - Phase 1 APIs",
+    "description": "Comprehensive API collection for BesaHubs CRM Phase 1 features:\n\n- SendGrid Email Integration\n- Google & Microsoft Calendar Sync\n- Advanced Custom Dashboards\n- Email Event Tracking\n\n**Setup Instructions:**\n1. Import this collection into Postman\n2. Create a new environment with variables: `base_url`, `jwt_token`, `contact_id`, `campaign_id`, `calendar_account_id`, `dashboard_id`, `widget_id`\n3. Set `base_url` to `http://localhost:3001` (or your API URL)\n4. Login and copy JWT token to `jwt_token` variable\n5. Run requests in order within each folder\n\n**Version:** 1.0.0\n**Last Updated:** October 19, 2025",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "SendGrid Integration",
+      "item": [
+        {
+          "name": "Get SendGrid Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/integrations/sendgrid/status",
+              "host": ["{{base_url}}"],
+              "path": ["api", "integrations", "sendgrid", "status"]
+            },
+            "description": "Get current SendGrid integration status including configuration, templates, and webhook setup."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/integrations/sendgrid/status"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"enabled\": true,\n  \"configured\": true,\n  \"fromEmail\": \"noreply@yourdomain.com\",\n  \"fromName\": \"BesaHubs CRM\",\n  \"templates\": {\n    \"invite\": \"d-xxxxxxxxxxxxxxxxxxxxx\",\n    \"passwordReset\": \"d-yyyyyyyyyyyyyyyyyyyyy\",\n    \"propertyPromo\": \"d-zzzzzzzzzzzzzzzzzzzzz\"\n  },\n  \"webhookUrl\": \"https://api.yourdomain.com/api/integrations/sendgrid/webhook\",\n  \"webhookSigningConfigured\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "Simulate SendGrid Webhook - Delivered",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"email\": \"user@example.com\",\n    \"timestamp\": 1634567890,\n    \"event\": \"delivered\",\n    \"sg_event_id\": \"sendgrid-event-12345\",\n    \"sg_message_id\": \"message-id-67890\",\n    \"contactId\": \"{{contact_id}}\",\n    \"campaignId\": \"{{campaign_id}}\"\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/integrations/sendgrid/webhook",
+              "host": ["{{base_url}}"],
+              "path": ["api", "integrations", "sendgrid", "webhook"]
+            },
+            "description": "Simulate a SendGrid webhook event for email delivery. Note: In production, this endpoint validates webhook signatures."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/integrations/sendgrid/webhook"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"processed\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "Simulate SendGrid Webhook - Opened",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"email\": \"user@example.com\",\n    \"timestamp\": 1634567950,\n    \"event\": \"open\",\n    \"sg_event_id\": \"sendgrid-event-12346\",\n    \"sg_message_id\": \"message-id-67890\",\n    \"contactId\": \"{{contact_id}}\",\n    \"campaignId\": \"{{campaign_id}}\",\n    \"ip\": \"192.168.1.1\",\n    \"useragent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/integrations/sendgrid/webhook",
+              "host": ["{{base_url}}"],
+              "path": ["api", "integrations", "sendgrid", "webhook"]
+            },
+            "description": "Simulate email open event with user agent and IP tracking."
+          },
+          "response": []
+        },
+        {
+          "name": "Simulate SendGrid Webhook - Clicked",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"email\": \"user@example.com\",\n    \"timestamp\": 1634568000,\n    \"event\": \"click\",\n    \"sg_event_id\": \"sendgrid-event-12347\",\n    \"sg_message_id\": \"message-id-67890\",\n    \"contactId\": \"{{contact_id}}\",\n    \"campaignId\": \"{{campaign_id}}\",\n    \"ip\": \"192.168.1.1\",\n    \"url\": \"https://example.com/property/123\",\n    \"useragent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/integrations/sendgrid/webhook",
+              "host": ["{{base_url}}"],
+              "path": ["api", "integrations", "sendgrid", "webhook"]
+            },
+            "description": "Simulate email link click event with URL tracking."
+          },
+          "response": []
+        },
+        {
+          "name": "Simulate SendGrid Webhook - Bounce",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"email\": \"bounced@example.com\",\n    \"timestamp\": 1634568100,\n    \"event\": \"bounce\",\n    \"sg_event_id\": \"sendgrid-event-12348\",\n    \"sg_message_id\": \"message-id-67891\",\n    \"contactId\": \"{{contact_id}}\",\n    \"campaignId\": \"{{campaign_id}}\",\n    \"reason\": \"550 5.1.1 The email account that you tried to reach does not exist\",\n    \"type\": \"blocked\",\n    \"status\": \"5.1.1\"\n  }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/integrations/sendgrid/webhook",
+              "host": ["{{base_url}}"],
+              "path": ["api", "integrations", "sendgrid", "webhook"]
+            },
+            "description": "Simulate email bounce event with reason and status code."
+          },
+          "response": []
+        }
+      ],
+      "description": "SendGrid email integration endpoints for webhook processing and status checking."
+    },
+    {
+      "name": "Calendar - Google",
+      "item": [
+        {
+          "name": "Connect Google Calendar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/google/connect",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "google", "connect"]
+            },
+            "description": "Initiate Google Calendar OAuth flow. Returns authorization URL to redirect user to."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/calendar/google/connect"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"authUrl\": \"https://accounts.google.com/o/oauth2/v2/auth?client_id=123456789.apps.googleusercontent.com&redirect_uri=http://localhost:3001/api/calendar/google/callback&response_type=code&scope=https://www.googleapis.com/auth/calendar&state=user-uuid-here\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Google OAuth Callback",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/google/callback?code=4/0AY0e-g7xxx&state=user-uuid",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "google", "callback"],
+              "query": [
+                {
+                  "key": "code",
+                  "value": "4/0AY0e-g7xxx",
+                  "description": "Authorization code from Google"
+                },
+                {
+                  "key": "state",
+                  "value": "user-uuid",
+                  "description": "User ID passed in state parameter"
+                }
+              ]
+            },
+            "description": "OAuth callback endpoint. Google redirects here after user authorizes. This is handled automatically by the browser."
+          },
+          "response": []
+        }
+      ],
+      "description": "Google Calendar OAuth and connection management endpoints."
+    },
+    {
+      "name": "Calendar - Microsoft",
+      "item": [
+        {
+          "name": "Connect Microsoft Calendar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/microsoft/connect",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "microsoft", "connect"]
+            },
+            "description": "Initiate Microsoft 365 Calendar OAuth flow. Returns authorization URL to redirect user to."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/calendar/microsoft/connect"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"authUrl\": \"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=12345678-abcd-1234&redirect_uri=http://localhost:3001/api/calendar/microsoft/callback&response_type=code&scope=Calendars.ReadWrite+User.Read&state=user-uuid-here\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Microsoft OAuth Callback",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/microsoft/callback?code=M.R3_BAY.xxx&state=user-uuid",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "microsoft", "callback"],
+              "query": [
+                {
+                  "key": "code",
+                  "value": "M.R3_BAY.xxx",
+                  "description": "Authorization code from Microsoft"
+                },
+                {
+                  "key": "state",
+                  "value": "user-uuid",
+                  "description": "User ID passed in state parameter"
+                }
+              ]
+            },
+            "description": "OAuth callback endpoint. Microsoft redirects here after user authorizes. This is handled automatically by the browser."
+          },
+          "response": []
+        }
+      ],
+      "description": "Microsoft 365 Calendar OAuth and connection management endpoints."
+    },
+    {
+      "name": "Calendar - Accounts & Sync",
+      "item": [
+        {
+          "name": "List Calendar Accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/accounts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "accounts"]
+            },
+            "description": "Get all connected calendar accounts for the current user."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/calendar/accounts"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"accounts\": [\n      {\n        \"id\": \"550e8400-e29b-41d4-a716-446655440000\",\n        \"provider\": \"google\",\n        \"email\": \"user@gmail.com\",\n        \"isActive\": true,\n        \"lastSyncedAt\": \"2025-10-19T10:00:00Z\",\n        \"expiresAt\": \"2025-10-19T11:00:00Z\",\n        \"isTokenExpired\": false,\n        \"needsSync\": false\n      },\n      {\n        \"id\": \"550e8400-e29b-41d4-a716-446655440001\",\n        \"provider\": \"microsoft\",\n        \"email\": \"user@outlook.com\",\n        \"isActive\": true,\n        \"lastSyncedAt\": \"2025-10-19T09:45:00Z\",\n        \"expiresAt\": \"2025-10-19T10:45:00Z\",\n        \"isTokenExpired\": false,\n        \"needsSync\": false\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Sync Calendar Events",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountId\": \"{{calendar_account_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/calendar/sync",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "sync"]
+            },
+            "description": "Manually trigger calendar sync for a specific account. Fetches events from the past 90 days and next 60 days."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/calendar/sync"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"eventCount\": 42,\n    \"lastSyncedAt\": \"2025-10-19T12:00:00Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Disconnect Calendar Account",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/accounts/{{calendar_account_id}}/disconnect",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "accounts", "{{calendar_account_id}}", "disconnect"]
+            },
+            "description": "Disconnect and remove a calendar account. This deletes all synced events from this account."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/api/calendar/accounts/550e8400-e29b-41d4-a716-446655440000/disconnect"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Calendar account disconnected successfully\"\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Calendar account management and synchronization endpoints."
+    },
+    {
+      "name": "Calendar - Events",
+      "item": [
+        {
+          "name": "List Calendar Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/events?from=2025-10-20T00:00:00Z&to=2025-10-31T23:59:59Z&limit=50",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "events"],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "{{calendar_account_id}}",
+                  "disabled": true,
+                  "description": "Filter by specific calendar account (optional)"
+                },
+                {
+                  "key": "from",
+                  "value": "2025-10-20T00:00:00Z",
+                  "description": "Start date (ISO 8601)"
+                },
+                {
+                  "key": "to",
+                  "value": "2025-10-31T23:59:59Z",
+                  "description": "End date (ISO 8601)"
+                },
+                {
+                  "key": "status",
+                  "value": "confirmed",
+                  "disabled": true,
+                  "description": "Filter by status: confirmed, tentative, cancelled"
+                },
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Max results per page"
+                },
+                {
+                  "key": "offset",
+                  "value": "0",
+                  "disabled": true,
+                  "description": "Pagination offset"
+                }
+              ]
+            },
+            "description": "Fetch calendar events with filtering by date range, account, and status."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/calendar/events?from=2025-10-20&to=2025-10-31"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"events\": [\n      {\n        \"id\": \"660e8400-e29b-41d4-a716-446655440000\",\n        \"calendarAccountId\": \"550e8400-e29b-41d4-a716-446655440000\",\n        \"externalId\": \"google-event-abc123\",\n        \"title\": \"Property Showing - 123 Main St\",\n        \"description\": \"Meet with client to show property\",\n        \"start\": \"2025-10-20T14:00:00Z\",\n        \"end\": \"2025-10-20T15:00:00Z\",\n        \"location\": \"123 Main St, San Francisco, CA\",\n        \"attendees\": [\"client@example.com\"],\n        \"status\": \"confirmed\",\n        \"isAllDay\": false,\n        \"timezone\": \"America/Los_Angeles\",\n        \"metadata\": {}\n      }\n    ],\n    \"pagination\": {\n      \"total\": 100,\n      \"limit\": 50,\n      \"offset\": 0\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Calendar Event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountId\": \"{{calendar_account_id}}\",\n  \"title\": \"Client Meeting - Property Review\",\n  \"description\": \"Quarterly review and property updates\",\n  \"start\": \"2025-10-25T10:00:00Z\",\n  \"end\": \"2025-10-25T11:00:00Z\",\n  \"location\": \"Conference Room A\",\n  \"attendees\": [\"client@example.com\", \"manager@example.com\"],\n  \"isAllDay\": false,\n  \"timezone\": \"America/New_York\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/calendar/events",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "events"]
+            },
+            "description": "Create a new calendar event. The event is also created in the connected Google/Microsoft calendar."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/calendar/events"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"event\": {\n      \"id\": \"660e8400-e29b-41d4-a716-446655440001\",\n      \"calendarAccountId\": \"550e8400-e29b-41d4-a716-446655440000\",\n      \"externalId\": \"google-event-xyz789\",\n      \"title\": \"Client Meeting - Property Review\",\n      \"description\": \"Quarterly review and property updates\",\n      \"start\": \"2025-10-25T10:00:00Z\",\n      \"end\": \"2025-10-25T11:00:00Z\",\n      \"location\": \"Conference Room A\",\n      \"attendees\": [\"client@example.com\", \"manager@example.com\"],\n      \"status\": \"confirmed\",\n      \"isAllDay\": false,\n      \"timezone\": \"America/New_York\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Calendar Event",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated: Client Meeting - Property Review\",\n  \"start\": \"2025-10-25T11:00:00Z\",\n  \"end\": \"2025-10-25T12:00:00Z\",\n  \"location\": \"Conference Room B\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/calendar/events/660e8400-e29b-41d4-a716-446655440001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "events", "660e8400-e29b-41d4-a716-446655440001"]
+            },
+            "description": "Update an existing calendar event. Changes are synced to the external calendar."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "PUT",
+                "url": "{{base_url}}/api/calendar/events/660e8400-e29b-41d4-a716-446655440001"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"event\": {\n      \"id\": \"660e8400-e29b-41d4-a716-446655440001\",\n      \"title\": \"Updated: Client Meeting - Property Review\",\n      \"start\": \"2025-10-25T11:00:00Z\",\n      \"end\": \"2025-10-25T12:00:00Z\",\n      \"location\": \"Conference Room B\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Calendar Event",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/calendar/events/660e8400-e29b-41d4-a716-446655440001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "calendar", "events", "660e8400-e29b-41d4-a716-446655440001"]
+            },
+            "description": "Delete a calendar event. The event is also deleted from the external calendar."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/api/calendar/events/660e8400-e29b-41d4-a716-446655440001"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Event deleted successfully\"\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Calendar event CRUD operations (Create, Read, Update, Delete)."
+    },
+    {
+      "name": "Dashboards",
+      "item": [
+        {
+          "name": "List All Dashboards",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/dashboards",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards"]
+            },
+            "description": "Get all dashboards (user's own dashboards + dashboards shared with the user)."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/dashboards"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"myDashboards\": [\n      {\n        \"id\": \"770e8400-e29b-41d4-a716-446655440000\",\n        \"name\": \"Sales Pipeline\",\n        \"description\": \"Track deal progress and conversion rates\",\n        \"isDefault\": true,\n        \"isShared\": false,\n        \"widgets\": []\n      }\n    ],\n    \"sharedDashboards\": [\n      {\n        \"id\": \"770e8400-e29b-41d4-a716-446655440001\",\n        \"name\": \"Team Performance\",\n        \"description\": \"Overall team metrics\",\n        \"user\": {\n          \"id\": \"440e8400-e29b-41d4-a716-446655440000\",\n          \"firstName\": \"John\",\n          \"lastName\": \"Doe\"\n        },\n        \"widgets\": []\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Dashboard by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/{{dashboard_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "{{dashboard_id}}"]
+            },
+            "description": "Get a specific dashboard with all its widgets."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/dashboards/770e8400-e29b-41d4-a716-446655440000"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": \"770e8400-e29b-41d4-a716-446655440000\",\n    \"name\": \"Sales Pipeline\",\n    \"description\": \"Track deal progress\",\n    \"isDefault\": true,\n    \"isShared\": false,\n    \"widgets\": [\n      {\n        \"id\": \"880e8400-e29b-41d4-a716-446655440000\",\n        \"type\": \"kpi\",\n        \"dataset\": \"deals\",\n        \"title\": \"Total Deal Value\",\n        \"query\": {\n          \"filters\": {\"stage\": \"won\"},\n          \"aggregation\": \"sum\",\n          \"field\": \"value\"\n        },\n        \"position\": {\"x\": 0, \"y\": 0, \"w\": 4, \"h\": 2}\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Dashboard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"My Custom Dashboard\",\n  \"description\": \"Track key metrics and KPIs\",\n  \"layout\": {},\n  \"isDefault\": false\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/dashboards",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards"]
+            },
+            "description": "Create a new dashboard. Only admins and managers can create dashboards."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/dashboards"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": \"770e8400-e29b-41d4-a716-446655440002\",\n    \"name\": \"My Custom Dashboard\",\n    \"description\": \"Track key metrics and KPIs\",\n    \"userId\": \"440e8400-e29b-41d4-a716-446655440000\",\n    \"isShared\": false,\n    \"isDefault\": false\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Dashboard",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Dashboard Name\",\n  \"description\": \"Updated description\",\n  \"layout\": {\n    \"cols\": 12,\n    \"rowHeight\": 30\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/{{dashboard_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "{{dashboard_id}}"]
+            },
+            "description": "Update an existing dashboard. Only the owner or admins can update."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "PUT",
+                "url": "{{base_url}}/api/dashboards/770e8400-e29b-41d4-a716-446655440002"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": \"770e8400-e29b-41d4-a716-446655440002\",\n    \"name\": \"Updated Dashboard Name\",\n    \"description\": \"Updated description\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Dashboard",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/{{dashboard_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "{{dashboard_id}}"]
+            },
+            "description": "Soft delete a dashboard. Only the owner or admins can delete."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/api/dashboards/770e8400-e29b-41d4-a716-446655440002"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Dashboard deleted successfully\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Share Dashboard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userIds\": [\"440e8400-e29b-41d4-a716-446655440001\", \"440e8400-e29b-41d4-a716-446655440002\"],\n  \"roles\": [\"manager\", \"agent\"]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/{{dashboard_id}}/share",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "{{dashboard_id}}", "share"]
+            },
+            "description": "Share a dashboard with specific users or all users with certain roles."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/dashboards/770e8400-e29b-41d4-a716-446655440000/share"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"isShared\": true,\n    \"sharedWith\": [\n      \"440e8400-e29b-41d4-a716-446655440001\",\n      \"440e8400-e29b-41d4-a716-446655440002\",\n      \"manager\",\n      \"agent\"\n    ]\n  }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Dashboard management endpoints for creating, reading, updating, deleting, and sharing dashboards."
+    },
+    {
+      "name": "Widgets",
+      "item": [
+        {
+          "name": "Get Dashboard Widgets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/{{dashboard_id}}/widgets",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "{{dashboard_id}}", "widgets"]
+            },
+            "description": "Get all widgets for a specific dashboard."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/dashboards/770e8400-e29b-41d4-a716-446655440000/widgets"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": \"880e8400-e29b-41d4-a716-446655440000\",\n      \"dashboardId\": \"770e8400-e29b-41d4-a716-446655440000\",\n      \"type\": \"bar\",\n      \"dataset\": \"deals\",\n      \"title\": \"Deals by Stage\",\n      \"query\": {\n        \"groupBy\": \"stage\",\n        \"aggregation\": \"count\"\n      },\n      \"position\": {\"x\": 0, \"y\": 0, \"w\": 6, \"h\": 4},\n      \"refreshInterval\": 300\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add Widget to Dashboard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"bar\",\n  \"dataset\": \"deals\",\n  \"title\": \"Deals by Stage\",\n  \"query\": {\n    \"groupBy\": \"stage\",\n    \"aggregation\": \"count\"\n  },\n  \"position\": {\n    \"x\": 0,\n    \"y\": 0,\n    \"w\": 6,\n    \"h\": 4\n  },\n  \"refreshInterval\": 300\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/{{dashboard_id}}/widgets",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "{{dashboard_id}}", "widgets"]
+            },
+            "description": "Add a new widget to a dashboard. Widget types: kpi, bar, line, pie, table, funnel."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/dashboards/770e8400-e29b-41d4-a716-446655440000/widgets"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": \"880e8400-e29b-41d4-a716-446655440001\",\n    \"dashboardId\": \"770e8400-e29b-41d4-a716-446655440000\",\n    \"type\": \"bar\",\n    \"dataset\": \"deals\",\n    \"title\": \"Deals by Stage\",\n    \"position\": {\"x\": 0, \"y\": 0, \"w\": 6, \"h\": 4}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Widget",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Widget Title\",\n  \"query\": {\n    \"filters\": {\"stage\": \"won\"},\n    \"groupBy\": \"stage\",\n    \"aggregation\": \"sum\",\n    \"field\": \"value\"\n  },\n  \"position\": {\n    \"x\": 6,\n    \"y\": 0,\n    \"w\": 6,\n    \"h\": 4\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/widgets/{{widget_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "widgets", "{{widget_id}}"]
+            },
+            "description": "Update an existing widget's configuration, query, or position."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "PUT",
+                "url": "{{base_url}}/api/widgets/880e8400-e29b-41d4-a716-446655440001"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"id\": \"880e8400-e29b-41d4-a716-446655440001\",\n    \"title\": \"Updated Widget Title\",\n    \"position\": {\"x\": 6, \"y\": 0, \"w\": 6, \"h\": 4}\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Widget",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/widgets/{{widget_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "widgets", "{{widget_id}}"]
+            },
+            "description": "Delete a widget from its dashboard."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "DELETE",
+                "url": "{{base_url}}/api/widgets/880e8400-e29b-41d4-a716-446655440001"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Widget deleted successfully\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Test Widget Query",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataset\": \"deals\",\n  \"query\": {\n    \"filters\": {\n      \"stage\": \"won\",\n      \"createdAt\": {\n        \"gte\": \"2025-01-01\"\n      }\n    },\n    \"aggregation\": \"sum\",\n    \"field\": \"value\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/widgets/query",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "widgets", "query"]
+            },
+            "description": "Test a widget query without creating the widget. Useful for debugging queries before adding to dashboard."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/dashboards/widgets/query"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"result\": 5250000,\n    \"count\": 42\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Refresh Widget Data",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/dashboards/widgets/{{widget_id}}/refresh",
+              "host": ["{{base_url}}"],
+              "path": ["api", "dashboards", "widgets", "{{widget_id}}", "refresh"]
+            },
+            "description": "Manually refresh widget data by invalidating cache and re-running the query."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "url": "{{base_url}}/api/dashboards/widgets/880e8400-e29b-41d4-a716-446655440000/refresh"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"result\": {\n      \"prospecting\": 45,\n      \"qualification\": 32,\n      \"proposal\": 28,\n      \"negotiation\": 15,\n      \"won\": 42\n    }\n  }\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Widget management endpoints for creating, updating, deleting, and querying dashboard widgets."
+    },
+    {
+      "name": "Email Events",
+      "item": [
+        {
+          "name": "List Email Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/email/events?limit=50&page=1&sortOrder=DESC",
+              "host": ["{{base_url}}"],
+              "path": ["api", "email", "events"],
+              "query": [
+                {
+                  "key": "contactId",
+                  "value": "{{contact_id}}",
+                  "disabled": true,
+                  "description": "Filter by contact UUID"
+                },
+                {
+                  "key": "campaignId",
+                  "value": "{{campaign_id}}",
+                  "disabled": true,
+                  "description": "Filter by campaign UUID"
+                },
+                {
+                  "key": "eventType",
+                  "value": "open",
+                  "disabled": true,
+                  "description": "Filter by event type: processed, delivered, open, click, bounce, unsubscribe"
+                },
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Results per page (default: 50)"
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number (default: 1)"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "eventTimestamp",
+                  "disabled": true,
+                  "description": "Sort field (default: eventTimestamp)"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "DESC",
+                  "description": "Sort order: ASC or DESC (default: DESC)"
+                }
+              ]
+            },
+            "description": "Fetch email events with filtering and pagination. Useful for tracking email campaign performance."
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "url": "{{base_url}}/api/email/events?limit=50"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"events\": [\n    {\n      \"id\": \"990e8400-e29b-41d4-a716-446655440000\",\n      \"contactId\": \"330e8400-e29b-41d4-a716-446655440000\",\n      \"campaignId\": \"220e8400-e29b-41d4-a716-446655440000\",\n      \"messageId\": \"sendgrid-message-abc123\",\n      \"eventType\": \"open\",\n      \"eventTimestamp\": \"2025-10-19T12:00:00Z\",\n      \"metadata\": {\n        \"ip\": \"192.168.1.1\",\n        \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n      },\n      \"contact\": {\n        \"id\": \"330e8400-e29b-41d4-a716-446655440000\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"primaryEmail\": \"john.doe@example.com\"\n      },\n      \"campaign\": {\n        \"id\": \"220e8400-e29b-41d4-a716-446655440000\",\n        \"name\": \"October Property Newsletter\",\n        \"subject\": \"New Listings This Week\"\n      }\n    }\n  ],\n  \"total\": 1500,\n  \"pagination\": {\n    \"currentPage\": 1,\n    \"totalPages\": 30,\n    \"totalItems\": 1500,\n    \"itemsPerPage\": 50\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Email Events by Contact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/email/events?contactId={{contact_id}}&limit=100",
+              "host": ["{{base_url}}"],
+              "path": ["api", "email", "events"],
+              "query": [
+                {
+                  "key": "contactId",
+                  "value": "{{contact_id}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "100"
+                }
+              ]
+            },
+            "description": "Get all email events for a specific contact to see their engagement history."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Email Events by Campaign",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/email/events?campaignId={{campaign_id}}&limit=100",
+              "host": ["{{base_url}}"],
+              "path": ["api", "email", "events"],
+              "query": [
+                {
+                  "key": "campaignId",
+                  "value": "{{campaign_id}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "100"
+                }
+              ]
+            },
+            "description": "Get all email events for a specific campaign to measure its performance."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Opens Only",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/email/events?eventType=open&limit=100",
+              "host": ["{{base_url}}"],
+              "path": ["api", "email", "events"],
+              "query": [
+                {
+                  "key": "eventType",
+                  "value": "open"
+                },
+                {
+                  "key": "limit",
+                  "value": "100"
+                }
+              ]
+            },
+            "description": "Filter for only email open events to track engagement."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Bounces",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/email/events?eventType=bounce&limit=100",
+              "host": ["{{base_url}}"],
+              "path": ["api", "email", "events"],
+              "query": [
+                {
+                  "key": "eventType",
+                  "value": "bounce"
+                },
+                {
+                  "key": "limit",
+                  "value": "100"
+                }
+              ]
+            },
+            "description": "Filter for bounced emails to identify delivery issues and clean your contact list."
+          },
+          "response": []
+        }
+      ],
+      "description": "Email event tracking endpoints for monitoring email campaign performance and engagement."
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3001",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "contact_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "campaign_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "calendar_account_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "dashboard_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "widget_id",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

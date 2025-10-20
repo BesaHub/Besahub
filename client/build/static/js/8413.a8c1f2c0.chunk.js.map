@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/8413.a8c1f2c0.chunk.js","mappings":"uKAA2B,MAAuD,EAAjCA,KAAMC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,kB","sources":["pages/Companies/CompanyDetail.js"],"sourcesContent":["import React from 'react'; const CompanyDetail = () => <div>Company Detail</div>; export default CompanyDetail;\n"],"names":["CompanyDetail","_jsx","children"],"sourceRoot":""}
