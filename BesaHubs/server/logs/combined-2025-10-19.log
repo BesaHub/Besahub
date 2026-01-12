@@ -1,0 +1,157 @@
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:23:25"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:23:27"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:23:59"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:24:22"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:24:57"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:25:43"}
+{"ip":"::1","level":"warn","message":"⚠️ Duplicate request detected within 1 second","path":"/login","service":"cre-crm-app","signature":"::1-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36-eb1b9a96bde82a02","timeSinceLastRequest":3,"timestamp":"2025-10-19 19:25:43"}
+{"ip":"::1","level":"warn","message":"🚫 Blocking duplicate request","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2025-10-19 19:25:43"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:25:59"}
+{"ip":"::1","level":"warn","message":"⚠️ Duplicate request detected within 1 second","path":"/login","service":"cre-crm-app","signature":"::1-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36-eb1b9a96bde82a02","timeSinceLastRequest":0,"timestamp":"2025-10-19 19:25:59"}
+{"ip":"::1","level":"warn","message":"🚫 Blocking duplicate request","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2025-10-19 19:25:59"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:26:43"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:27:31"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:27:38"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:27:38","userAgent":"curl/8.7.1"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:27:38","userAgent":"curl/8.7.1"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:27:38"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:27:38"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:27:38","userId":"00000000-0000-0000-0000-000000000001"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:28:49"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:28:49","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:28:49","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:28:49"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:28:49"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:28:49","userId":"00000000-0000-0000-0000-000000000001"}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:51","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 19:28:51"}
+{"error":"","level":"warn","message":"Database operation failed: fetch contacts","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:51","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch contacts","service":"cre-crm-app","timestamp":"2025-10-19 19:28:51"}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:51","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:28:51"}
+{"error":"","level":"warn","message":"Database operation failed: fetch tasks","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:51","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch tasks","service":"cre-crm-app","timestamp":"2025-10-19 19:28:51"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 19:28:51","totalCount":5,"usingFallback":true}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:52","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 19:28:52"}
+{"error":"","level":"warn","message":"Database operation failed: fetch contacts","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:52","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch contacts","service":"cre-crm-app","timestamp":"2025-10-19 19:28:52"}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:52","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:28:52"}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:52","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:28:52"}
+{"error":"","level":"warn","message":"Database operation failed: fetch tasks","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:52","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch tasks","service":"cre-crm-app","timestamp":"2025-10-19 19:28:52"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 19:28:52","totalCount":5,"usingFallback":true}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:53","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:28:53"}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:56","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 19:28:56"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 19:28:56","totalCount":5,"usingFallback":true}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:28:57","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 19:28:57"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 19:28:57","totalCount":5,"usingFallback":true}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:29:32"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:47:49"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:51:10"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:51:10","userAgent":"curl/8.7.1"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:51:10","userAgent":"curl/8.7.1"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:51:10"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:51:10"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:51:11","userId":"00000000-0000-0000-0000-000000000001"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:52:12"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:52:12","userAgent":"curl/8.7.1"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:52:12","userAgent":"curl/8.7.1"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:52:12"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:52:12"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:52:12","userId":"00000000-0000-0000-0000-000000000001"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:53:51"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:53:51","userAgent":"curl/8.7.1"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:53:51","userAgent":"curl/8.7.1"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:53:51"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:53:51"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:53:51","userId":"00000000-0000-0000-0000-000000000001"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:54:32"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:54:41"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:54:41","userAgent":"curl/8.7.1"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:54:41","userAgent":"curl/8.7.1"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:54:41"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:54:41"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:54:41","userId":"00000000-0000-0000-0000-000000000001"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:56:11"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:57:34"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 19:58:37"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2025-10-19 19:59:55"}
+{"email":"admin@demo.com","hasPassword":true,"ip":"::1","level":"info","message":"🔐 Login attempt:","service":"cre-crm-app","timestamp":"2025-10-19 19:59:55","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"email":"admin@demo.com","ip":"::1","level":"warn","message":"⚠️  Demo login used - This should only be for development/testing","service":"cre-crm-app","timestamp":"2025-10-19 19:59:55","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+{"level":"info","message":"✅ Creating demo user tokens...","service":"cre-crm-app","timestamp":"2025-10-19 19:59:55"}
+{"level":"warn","message":"⚠️  JWT_SECRET not set, using fallback. Set JWT_SECRET environment variable for production!","service":"cre-crm-app","timestamp":"2025-10-19 19:59:55"}
+{"email":"admin@demo.com","level":"info","message":"✅ Demo login successful (fast mode - no DB check):","service":"cre-crm-app","timestamp":"2025-10-19 19:59:55","userId":"00000000-0000-0000-0000-000000000001"}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:57","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 19:59:57"}
+{"error":"","level":"warn","message":"Database operation failed: fetch contacts","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:57","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch contacts","service":"cre-crm-app","timestamp":"2025-10-19 19:59:57"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 19:59:57","totalCount":5,"usingFallback":true}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:57","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:59:57"}
+{"error":"","level":"warn","message":"Database operation failed: fetch tasks","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:57","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch tasks","service":"cre-crm-app","timestamp":"2025-10-19 19:59:57"}
+{"error":"","level":"warn","message":"Database operation failed: fetch contacts","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:58","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch contacts","service":"cre-crm-app","timestamp":"2025-10-19 19:59:58"}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:58","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 19:59:58"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 19:59:58","totalCount":5,"usingFallback":true}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:58","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:59:58"}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:58","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:59:58"}
+{"error":"","level":"warn","message":"Database operation failed: fetch tasks","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:58","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch tasks","service":"cre-crm-app","timestamp":"2025-10-19 19:59:58"}
+{"error":"","level":"warn","message":"Database operation failed: fetch deals","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 19:59:59","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch deals","service":"cre-crm-app","timestamp":"2025-10-19 19:59:59"}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 20:00:01","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 20:00:01"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 20:00:01","totalCount":5,"usingFallback":true}
+{"error":"","level":"warn","message":"Database operation failed: fetch properties","service":"cre-crm-app","timeout":5000,"timestamp":"2025-10-19 20:00:02","usingFallback":true}
+{"level":"info","message":"Using fallback data for: fetch properties","service":"cre-crm-app","timestamp":"2025-10-19 20:00:02"}
+{"firstProperty":{"id":"1","name":"Downtown Office Tower","propertyType":"office","status":"available"},"level":"info","message":"📊 Properties API Response","propertiesCount":5,"service":"cre-crm-app","timestamp":"2025-10-19 20:00:02","totalCount":5,"usingFallback":true}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:05:48"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:32:20"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:32:28"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:32:34"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:33:53"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:34:59"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 20:35:14"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:03:43"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:07:13"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:08:10"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:18:07"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:25:05"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:25:50"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:26:34"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:26:57"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:28:37"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:30:02"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:51:11"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:51:43"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:51:47"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:51:59"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:52:04"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:52:10"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:52:37"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:57:57"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:58:02"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:58:07"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 21:58:30"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:00:05"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:00:56"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:02:24"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:02:48"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:03:31"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:04:11"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:04:14"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:04:25"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:04:52"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:05:29"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:06:13"}
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2025-10-19 22:10:11"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/643.40d2821e.chunk.js","mappings":"sKAA2B,MAA6C,EAA5BA,KAAMC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,a","sources":["pages/Tasks/TaskForm.js"],"sourcesContent":["import React from 'react'; const TaskForm = () => <div>Task Form</div>; export default TaskForm;\n"],"names":["TaskForm","_jsx","children"],"sourceRoot":""}

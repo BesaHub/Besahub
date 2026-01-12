@@ -1,0 +1,98 @@
+You are upgrading BesaHubs, a production-ready Commercial Real Estate CRM (React + Node.js + PostgreSQL) into a next-generation sleek CRE-native system.
+
+## Goals
+1. Add CRE-specific intelligence layers (Leases + Debt).
+2. Build an Ownership Graph to roll up companies → parent → ultimate owner.
+3. Extend triggers + notifications into micro-campaign outreach.
+4. Modernize the UI for a sleek, Bloomberg-meets-Notion experience.
+
+## Tech Context
+- Frontend: React 18, MUI 5, React Router 6, React Query, React Hook Form, Socket.IO client.
+- Backend: Node.js 16+, Express 4, PostgreSQL 12 (Neon-hosted), Sequelize ORM, JWT auth, Socket.IO server.
+- Current entities: User, Property, Contact, Company, Deal, Task, Document, Activity, Notification, CallLog, EmailLog + RBAC entities.
+- Current features: authentication, RBAC, deal pipeline, property management, tasks, documents, notifications, comms logging, bulk import, backup/export, analytics, real-time collaboration.
+
+---
+
+## Phase 1 (Weeks 1–3) – Lease & Debt Intelligence Layer
+**Backend**
+- Create `Lease` model: id, propertyId, tenant (contactId), startDate, endDate, rent, options, status.
+- Create `Debt` model: id, propertyId, lender (companyId), amount, rate, maturityDate, dscr, notes.
+- Add Sequelize migrations + seed data.
+- Extend `/api/properties/:id` to include associated leases and debt.
+- Build triggers:
+  - Lease expiration within 3/6/9/12 months.
+  - Debt maturity within 6–12 months.
+- Nightly cron job writes triggers to `Trigger` table.
+
+**Frontend**
+- Property 360 page:
+  - New “Leases” tab (list, add, edit, expiration warning).
+  - New “Debt” tab (list, add, edit, maturity warning).
+- Home dashboard: tiles showing count of expiring leases and upcoming debt maturities.
+
+---
+
+## Phase 2 (Weeks 4–6) – Ownership Graph
+**Backend**
+- Extend `Company` model: add parentCompanyId (nullable).
+- Build resolver that rolls up company hierarchy → ultimate beneficial owner.
+- API endpoint `/api/companies/:id/ownership-graph` returns tree + linked properties/deals.
+
+**Frontend**
+- Owner 360 page:
+  - Portfolio view: all properties owned by this group.
+  - Roll-up of lease expirations + debt maturities.
+  - Visual ownership tree (D3 or Recharts tree).
+
+---
+
+## Phase 3 (Weeks 7–9) – Cohort Outreach Engine
+**Backend**
+- Add `Cohort` model: id, name, filterCriteria (JSON), createdBy.
+- Add endpoint to run filters (e.g. “all office properties in Dallas with debt < 12m”).
+- Add `Campaign` model linked to Cohort → creates tasks, email stubs, call lists.
+- Integrate with Notifications + Tasks.
+
+**Frontend**
+- Cohort Builder UI: filter by property type, geography, lease/debt triggers.
+- Campaign Launcher: one-click “Start Campaign” → generates tasks/email templates for each contact.
+
+---
+
+## Phase 4 (Weeks 10–12) – Sleek Modern UI
+**Frontend**
+- Replace/Create React components using Tailwind CSS + shadcn/ui (keep MUI for grid/forms short-term).
+- Apply modern theming: clean typography, rounded cards, subtle shadows, Bloomberg/Notion hybrid look.
+- Redesign Home dashboard with modular widgets (drag/drop panels for Leases, Debt, Deals, Cohorts).
+- Add Map integration to Cohorts: draw polygon on map → filter properties/deals inside.
+
+---
+
+## Non-Functional (Ongoing)
+- Unit + integration tests for new models (Lease, Debt, Cohort).
+- Add provenance tags to all imports (source, date, delta mode).
+- Upgrade build tooling to Vite for faster frontend builds (optional stretch).
+- Move file storage from Multer local → S3-compatible (optional stretch).
+
+---
+
+## Deliverables
+1. Updated Sequelize models + migrations for Lease, Debt, Cohort, Campaign, Ownership Graph.
+2. New API endpoints:
+   - `/api/properties/:id/leases`
+   - `/api/properties/:id/debt`
+   - `/api/companies/:id/ownership-graph`
+   - `/api/cohorts`
+   - `/api/campaigns`
+3. New frontend screens:
+   - Property 360 with Leases/Debt tabs.
+   - Owner 360 with portfolio + ownership tree.
+   - Cohort Builder + Campaign Launcher.
+   - Modernized Home Dashboard with Lease/Debt tiles.
+4. Trigger engine with nightly cron for lease expirations + debt maturities.
+5. Cohort-based micro-campaign workflow tied to tasks/notifications.
+
+---
+
+Start building Phase 1 immediately: create the Lease and Debt models with Sequelize, migrations, seed data, and extend the Property API + Property 360 frontend page to display them.

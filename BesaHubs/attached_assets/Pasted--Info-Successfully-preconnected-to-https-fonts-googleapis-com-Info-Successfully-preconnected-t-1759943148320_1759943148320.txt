@@ -1,0 +1,277 @@
+[Info] Successfully preconnected to https://fonts.googleapis.com/
+[Info] Successfully preconnected to https://fonts.gstatic.com/
+[Log] 🔧 API Configuration: – Object (bundle.js, line 115261)
+Object
+[Warning] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. (bundle.js, line 97355)
+[Warning] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. (bundle.js, line 97355)
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (manifest.json, line 0)
+[Error] WebSocket connection to 'wss://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev:5000/ws' failed: There was a bad response from the server. (x4)
+[Log] 🔐 Login form submitted with: – Object (src_pages_Auth_Login_js.chunk.js, line 205)
+Object
+[Log] 🚀 Calling login function... (src_pages_Auth_Login_js.chunk.js, line 210)
+[Log] 🔄 Resetting login mutation state... (bundle.js, line 115487)
+[Log] 🚀 Calling loginMutation.mutateAsync with: – Object (bundle.js, line 115489)
+Object
+[Log] Login mutation starting - clearing previous errors (bundle.js, line 115349)
+[Log] Making login API call to: – "/api/auth/login" (bundle.js, line 115335)
+[Log] With credentials: – Object (bundle.js, line 115336)
+Object
+[Log] Login API response: – Object (bundle.js, line 115344)
+Object
+[Log] Login mutation onSuccess called with data: – Object (bundle.js, line 115352)
+Object
+[Log] User state updated: – Object (bundle.js, line 115364)
+Object
+[Log] ✅ loginMutation.mutateAsync completed successfully: – Object (bundle.js, line 115495)
+Object
+[Log] ✅ Login successful, result: – Object (src_pages_Auth_Login_js.chunk.js, line 218)
+Object
+[Log] ⚠️ No onSuccess callback provided (src_pages_Auth_Login_js.chunk.js, line 239)
+[Log] Login state fully synchronized, user: – Object (bundle.js, line 115371)
+Object
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢 Properties API Response: – Object (src_pages_Properties_Properties_js.chunk.js, line 343)
+Object
+[Log] 🏢 Properties count: – 20 (src_pages_Properties_Properties_js.chunk.js, line 344)
+[Log] 🏢 Response keys: – Array (2) (src_pages_Properties_Properties_js.chunk.js, line 345)
+Array (2)
+[Log] 🏢 First property full: – "{↵  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",↵  \"mlsNumber\": \"MLS-NYC-001\",↵  \"name\": \"Manhattan Financial Tower\",↵  \"propertyType\"…" (src_pages_Properties_Properties_js.chunk.js, line 346)
+"{
+  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",
+  \"mlsNumber\": \"MLS-NYC-001\",
+  \"name\": \"Manhattan Financial Tower\",
+  \"propertyType\": \"office\",
+  \"buildingClass\": \"A\",
+  \"status\": \"available\",
+  \"marketingStatus\": \"published\",
+  \"listingType\": \"sale\",
+  \"address\": \"350 Fifth Avenue\",
+  \"city\": \"New York\",
+  \"state\": \"NY\",
+  \"zipCode\": \"10118\",
+  \"county\": \"New York\",
+  \"country\": \"US\",
+  \"latitude\": \"40.74880000\",
+  \"longitude\": \"-73.98570000\",
+  \"totalSquareFootage\": 250000,
+  \"availableSquareFootage\": 250000,
+  \"lotSize\": \"0.50\",
+  \"lotSizeUnit\": \"acres\",
+  \"yearBuilt\": 2015,
+  \"floors\": 35,
+  \"units\": null,
+  \"parkingSpaces\": 150,
+  \"parkingRatio\": \"2.50\",
+  \"ceilingHeight\": \"12.0\",
+  \"clearHeight\": null,
+  \"loadingDocks\": 0,
+  \"driveInDoors\": 0,
+  \"lotDimensions\": null,
+  \"listPrice\": \"125000000.00\",
+  \"pricePerSquareFoot\": \"500.00\",
+  \"leaseRate\": null,
+  \"leaseRateUnit\": \"per_sqft_annual\",
+  \"leaseType\": null,
+  \"operatingExpenses\": null,
+  \"taxes\": null,
+  \"capRate\": \"0.0525\",
+  \"netOperatingIncome\": \"6562500.00\",
+  \"amenities\": [
+    \"24/7 Security\",
+    \"Concierge\",
+    \"Fitness Center\",
+    \"Conference Rooms\"
+  ],
+  \"zoning\": \"C5-3\",
+  \"occupancyPercentage\": \"0.00\",
+  \"vacancyPercentage\": \"100.00\",
+  \"utilities\": {
+    \"gas\": true,
+    \"sewer\": true,
+    \"water\": true,
+    \"internet\": true,
+    \"electricity\": true
+  },
+  \"images\": [],
+  \"floorPlans\": [],
+  \"sitePlans\": [],
+  \"documents\": [],
+  \"offeringMemorandum\": null,
+  \"virtualTourUrl\": null,
+  \"description\": \"Prime Class A office tower in the heart of Manhattan with stunning city views.\",
+  \"marketingRemarks\": null,
+  \"keyFeatures\": [
+    \"Corner location\",
+    \"High-speed elevators\",
+    \"LEED Gold certified\"
+  ],
+  \"highlights\": null,
+  \"leaseTerms\": {
+    \"maxTerm\": null,
+    \"minTerm\": null,
+    \"renewalOptions\": null,
+    \"securityDeposit\": null,
+    \"personalGuaranteeRequired\": false
+  },
+  \"availabilityDate\": null,
+  \"daysOnMarket\": 45,
+  \"views\": 0,
+  \"inquiries\": 0,
+  \"showings\": 0,
+  \"ownerId\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+  \"landlordName\": null,
+  \"tenantRoster\": [],
+  \"listingAgentId\": \"00000000-0000-0000-0000-000000000001\",
+  \"internalPropertyId\": null,
+  \"notes\": null,
+  \"tags\": [],
+  \"linkedDeals\": [],
+  \"isActive\": true,
+  \"source\": \"manual\",
+  \"lastSyncedAt\": null,
+  \"createdAt\": \"2025-10-08T16:22:32.679Z\",
+  \"updatedAt\": \"2025-10-08T16:22:32.679Z\",
+  \"deletedAt\": null,
+  \"listingAgent\": {
+    \"id\": \"00000000-0000-0000-0000-000000000001\",
+    \"firstName\": \"Demo\",
+    \"lastName\": \"Admin\",
+    \"email\": \"admin@demo.com\",
+    \"phone\": null
+  },
+  \"owner\": {
+    \"id\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+    \"firstName\": \"Robert\",
+    \"lastName\": \"Williams\",
+    \"companyName\": \"Williams Family Trust\",
+    \"primaryEmail\": \"r.williams@wfamilytrust.com\"
+  }
+}"
+[Log] 🏢 Setting properties array with length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 348)
+[Log] 🏢 Properties API Response: – Object (src_pages_Properties_Properties_js.chunk.js, line 343)
+Object
+[Log] 🏢 Properties count: – 20 (src_pages_Properties_Properties_js.chunk.js, line 344)
+[Log] 🏢 Response keys: – Array (2) (src_pages_Properties_Properties_js.chunk.js, line 345)
+Array (2)
+[Log] 🏢 First property full: – "{↵  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",↵  \"mlsNumber\": \"MLS-NYC-001\",↵  \"name\": \"Manhattan Financial Tower\",↵  \"propertyType\"…" (src_pages_Properties_Properties_js.chunk.js, line 346)
+"{
+  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",
+  \"mlsNumber\": \"MLS-NYC-001\",
+  \"name\": \"Manhattan Financial Tower\",
+  \"propertyType\": \"office\",
+  \"buildingClass\": \"A\",
+  \"status\": \"available\",
+  \"marketingStatus\": \"published\",
+  \"listingType\": \"sale\",
+  \"address\": \"350 Fifth Avenue\",
+  \"city\": \"New York\",
+  \"state\": \"NY\",
+  \"zipCode\": \"10118\",
+  \"county\": \"New York\",
+  \"country\": \"US\",
+  \"latitude\": \"40.74880000\",
+  \"longitude\": \"-73.98570000\",
+  \"totalSquareFootage\": 250000,
+  \"availableSquareFootage\": 250000,
+  \"lotSize\": \"0.50\",
+  \"lotSizeUnit\": \"acres\",
+  \"yearBuilt\": 2015,
+  \"floors\": 35,
+  \"units\": null,
+  \"parkingSpaces\": 150,
+  \"parkingRatio\": \"2.50\",
+  \"ceilingHeight\": \"12.0\",
+  \"clearHeight\": null,
+  \"loadingDocks\": 0,
+  \"driveInDoors\": 0,
+  \"lotDimensions\": null,
+  \"listPrice\": \"125000000.00\",
+  \"pricePerSquareFoot\": \"500.00\",
+  \"leaseRate\": null,
+  \"leaseRateUnit\": \"per_sqft_annual\",
+  \"leaseType\": null,
+  \"operatingExpenses\": null,
+  \"taxes\": null,
+  \"capRate\": \"0.0525\",
+  \"netOperatingIncome\": \"6562500.00\",
+  \"amenities\": [
+    \"24/7 Security\",
+    \"Concierge\",
+    \"Fitness Center\",
+    \"Conference Rooms\"
+  ],
+  \"zoning\": \"C5-3\",
+  \"occupancyPercentage\": \"0.00\",
+  \"vacancyPercentage\": \"100.00\",
+  \"utilities\": {
+    \"gas\": true,
+    \"sewer\": true,
+    \"water\": true,
+    \"internet\": true,
+    \"electricity\": true
+  },
+  \"images\": [],
+  \"floorPlans\": [],
+  \"sitePlans\": [],
+  \"documents\": [],
+  \"offeringMemorandum\": null,
+  \"virtualTourUrl\": null,
+  \"description\": \"Prime Class A office tower in the heart of Manhattan with stunning city views.\",
+  \"marketingRemarks\": null,
+  \"keyFeatures\": [
+    \"Corner location\",
+    \"High-speed elevators\",
+    \"LEED Gold certified\"
+  ],
+  \"highlights\": null,
+  \"leaseTerms\": {
+    \"maxTerm\": null,
+    \"minTerm\": null,
+    \"renewalOptions\": null,
+    \"securityDeposit\": null,
+    \"personalGuaranteeRequired\": false
+  },
+  \"availabilityDate\": null,
+  \"daysOnMarket\": 45,
+  \"views\": 0,
+  \"inquiries\": 0,
+  \"showings\": 0,
+  \"ownerId\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+  \"landlordName\": null,
+  \"tenantRoster\": [],
+  \"listingAgentId\": \"00000000-0000-0000-0000-000000000001\",
+  \"internalPropertyId\": null,
+  \"notes\": null,
+  \"tags\": [],
+  \"linkedDeals\": [],
+  \"isActive\": true,
+  \"source\": \"manual\",
+  \"lastSyncedAt\": null,
+  \"createdAt\": \"2025-10-08T16:22:32.679Z\",
+  \"updatedAt\": \"2025-10-08T16:22:32.679Z\",
+  \"deletedAt\": null,
+  \"listingAgent\": {
+    \"id\": \"00000000-0000-0000-0000-000000000001\",
+    \"firstName\": \"Demo\",
+    \"lastName\": \"Admin\",
+    \"email\": \"admin@demo.com\",
+    \"phone\": null
+  },
+  \"owner\": {
+    \"id\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+    \"firstName\": \"Robert\",
+    \"lastName\": \"Williams\",
+    \"companyName\": \"Williams Family Trust\",
+    \"primaryEmail\": \"r.williams@wfamilytrust.com\"
+  }
+}"
+[Log] 🏢 Setting properties array with length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 348)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Error] WebSocket connection to 'wss://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev:5000/ws' failed: There was a bad response from the server.
+[Error] Source Map loading errors (x2)
+[Error] Failed to load resource: The operation couldn’t be completed. (NSURLErrorDomain error 260.) (purify.js.map, line 0)
+[Error] Failed to load resource: The operation couldn’t be completed. (NSURLErrorDomain error 260.) (purify.js.map, line 0)
+> Selected Element
+< <div class="property-overlay MuiBox-root css-4up7yd"></div>

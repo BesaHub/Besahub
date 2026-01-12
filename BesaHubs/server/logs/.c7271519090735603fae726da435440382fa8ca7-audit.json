@@ -1,0 +1,100 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 90
+    },
+    "auditLog": "/home/runner/workspace/server/logs/.c7271519090735603fae726da435440382fa8ca7-audit.json",
+    "files": [
+        {
+            "date": 1759188014307,
+            "name": "/home/runner/workspace/server/logs/security-2025-09-29.log",
+            "hash": "7269e6e9654d1b645002dd9f1fbebc3435a8afe9781822c21b4653be2121423d"
+        },
+        {
+            "date": 1759190683191,
+            "name": "/home/runner/workspace/server/logs/security-2025-09-30.log",
+            "hash": "0cdf46b305d775899b05ac9a498150938b7b310a2e4d4c410494c250a823de0e"
+        },
+        {
+            "date": 1759320476033,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-01.log",
+            "hash": "7b099d83c30e5471b22a8e70d0de82799054960377bd2dd81ee579bd0187da47"
+        },
+        {
+            "date": 1759365313920,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-02.log",
+            "hash": "471f893cab587aab7972caff4963f2d20afe012d66db3f19435b77edab0f07f9"
+        },
+        {
+            "date": 1759691852885,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-05.log",
+            "hash": "fa6f2fd804310c5368c0f88ff9325d3cf2cce653021d30b3b8814174d2e0e8e0"
+        },
+        {
+            "date": 1759744191634,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-06.log",
+            "hash": "2f2dbbddd5734d4aa74b03ec2fffbd15a9ffd8703c5a1a1db2175a46074bf4d4"
+        },
+        {
+            "date": 1759836352466,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-07.log",
+            "hash": "e2de4d76678cd49c6e9ae740a706669ea54d86f66cd8235cf584828872dd016c"
+        },
+        {
+            "date": 1759937554966,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-08.log",
+            "hash": "c460f33eeb5dfd3467dd41038bcab26a94d0e6ca3d0997581726ca6e0a0deee3"
+        },
+        {
+            "date": 1760000049066,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-09.log",
+            "hash": "2d0811a6d73efc4624e97bef2225e05d50c0e012d74b3e2b4a93c841eea244bd"
+        },
+        {
+            "date": 1760115835982,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-10.log",
+            "hash": "6ad2a99d8cae2f03c075a8057a30307ce2b6793c1c44af9842b641d8dd1e6a8a"
+        },
+        {
+            "date": 1760283715254,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-12.log",
+            "hash": "1dd9aa821498378a97cc429068f37800e298089ebe600f81bc378ac7df3c677d"
+        },
+        {
+            "date": 1760342657764,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-13.log",
+            "hash": "1fa9f4a78399558b641b24a7cc533c1458b7af699c813b95748d0a890851b25c"
+        },
+        {
+            "date": 1760428794467,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-14.log",
+            "hash": "b518577fe3a3420be7852e2c6934878ac5366d6a3b0a4fe10fa35e90b2d09346"
+        },
+        {
+            "date": 1760560894465,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-15.log",
+            "hash": "8371f8ca615058f6bf9f4f75108391929c883b9a2e9ff38d4b16aea897d67e51"
+        },
+        {
+            "date": 1760633028406,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-16.log",
+            "hash": "37c67822006987737653e2b2a03474276e9513deb06208198554e38a70a5608e"
+        },
+        {
+            "date": 1760720524039,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-17.log",
+            "hash": "1c98db6aead8aa661e0efc4b16e511daa3bc479838af2184cd276916ab995001"
+        },
+        {
+            "date": 1760823746663,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-18.log",
+            "hash": "f8b120ab40e7cec4c6183084be011297ed5c62fc1bc2bc4ce91e6b7fb99bfa92"
+        },
+        {
+            "date": 1760875768146,
+            "name": "/home/runner/workspace/server/logs/security-2025-10-19.log",
+            "hash": "311c5fd7d6d4c65aa55af3ce552abf11a323a75ce599d79a38c0291e7b21c72d"
+        }
+    ],
+    "hashType": "sha256"
+}

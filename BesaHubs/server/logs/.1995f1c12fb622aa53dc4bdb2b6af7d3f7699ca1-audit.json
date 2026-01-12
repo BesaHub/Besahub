@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 90
+    },
+    "auditLog": "/Users/brycedunbar/Desktop/BesaHub/BesaHubs/server/logs/.1995f1c12fb622aa53dc4bdb2b6af7d3f7699ca1-audit.json",
+    "files": [
+        {
+            "date": 1767910337949,
+            "name": "/Users/brycedunbar/Desktop/BesaHub/BesaHubs/server/logs/error-2026-01-08.log",
+            "hash": "e598b7d259aae52b7e6d7a295f1f44366c76446c2c53e545988a420460d3a54d"
+        }
+    ],
+    "hashType": "sha256"
+}

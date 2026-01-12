@@ -1,0 +1,293 @@
+[Info] Successfully preconnected to https://fonts.gstatic.com/
+[Info] Successfully preconnected to https://fonts.googleapis.com/
+[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (manifest.json, line 0)
+[Log] 🔧 API Configuration: – Object (bundle.js, line 115261)
+Object
+[Warning] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. (bundle.js, line 97355)
+[Warning] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. (bundle.js, line 97355)
+[Error] WebSocket connection to 'wss://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev:5000/ws' failed: There was a bad response from the server.
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢 FILTERING - properties.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 469)
+[Log] 🏢 FILTERING - debouncedSearch: – "" (src_pages_Properties_Properties_js.chunk.js, line 470)
+[Log] 🏢 FILTERING - selectedType: – "" (src_pages_Properties_Properties_js.chunk.js, line 471)
+[Log] 🏢 FILTERING - selectedStatus: – "" (src_pages_Properties_Properties_js.chunk.js, line 472)
+[Log] 🏢 FILTERED - filtered.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 509)
+[Log] 🏢 PAGINATION - filteredAndSortedProperties.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 514)
+[Log] 🏢 PAGINATION - page: – 1 – "itemsPerPage:" – 12 (src_pages_Properties_Properties_js.chunk.js, line 515)
+[Log] 🏢 PAGINATION - paginated.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 519)
+[Log] 🏢 PAGINATION - First paginated property: – undefined (src_pages_Properties_Properties_js.chunk.js, line 520)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢 FILTERING - properties.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 469)
+[Log] 🏢 FILTERING - debouncedSearch: – "" (src_pages_Properties_Properties_js.chunk.js, line 470)
+[Log] 🏢 FILTERING - selectedType: – "" (src_pages_Properties_Properties_js.chunk.js, line 471)
+[Log] 🏢 FILTERING - selectedStatus: – "" (src_pages_Properties_Properties_js.chunk.js, line 472)
+[Log] 🏢 FILTERED - filtered.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 509)
+[Log] 🏢 PAGINATION - filteredAndSortedProperties.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 514)
+[Log] 🏢 PAGINATION - page: – 1 – "itemsPerPage:" – 12 (src_pages_Properties_Properties_js.chunk.js, line 515)
+[Log] 🏢 PAGINATION - paginated.length: – 0 (src_pages_Properties_Properties_js.chunk.js, line 519)
+[Log] 🏢 PAGINATION - First paginated property: – undefined (src_pages_Properties_Properties_js.chunk.js, line 520)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢 Properties API Response: – Object (src_pages_Properties_Properties_js.chunk.js, line 343)
+Object
+[Log] 🏢 Properties count: – 20 (src_pages_Properties_Properties_js.chunk.js, line 344)
+[Log] 🏢 Response keys: – Array (2) (src_pages_Properties_Properties_js.chunk.js, line 345)
+Array (2)
+[Log] 🏢 First property full: – "{↵  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",↵  \"mlsNumber\": \"MLS-NYC-001\",↵  \"name\": \"Manhattan Financial Tower\",↵  \"propertyType\"…" (src_pages_Properties_Properties_js.chunk.js, line 346)
+"{
+  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",
+  \"mlsNumber\": \"MLS-NYC-001\",
+  \"name\": \"Manhattan Financial Tower\",
+  \"propertyType\": \"office\",
+  \"buildingClass\": \"A\",
+  \"status\": \"available\",
+  \"marketingStatus\": \"published\",
+  \"listingType\": \"sale\",
+  \"address\": \"350 Fifth Avenue\",
+  \"city\": \"New York\",
+  \"state\": \"NY\",
+  \"zipCode\": \"10118\",
+  \"county\": \"New York\",
+  \"country\": \"US\",
+  \"latitude\": \"40.74880000\",
+  \"longitude\": \"-73.98570000\",
+  \"totalSquareFootage\": 250000,
+  \"availableSquareFootage\": 250000,
+  \"lotSize\": \"0.50\",
+  \"lotSizeUnit\": \"acres\",
+  \"yearBuilt\": 2015,
+  \"floors\": 35,
+  \"units\": null,
+  \"parkingSpaces\": 150,
+  \"parkingRatio\": \"2.50\",
+  \"ceilingHeight\": \"12.0\",
+  \"clearHeight\": null,
+  \"loadingDocks\": 0,
+  \"driveInDoors\": 0,
+  \"lotDimensions\": null,
+  \"listPrice\": \"125000000.00\",
+  \"pricePerSquareFoot\": \"500.00\",
+  \"leaseRate\": null,
+  \"leaseRateUnit\": \"per_sqft_annual\",
+  \"leaseType\": null,
+  \"operatingExpenses\": null,
+  \"taxes\": null,
+  \"capRate\": \"0.0525\",
+  \"netOperatingIncome\": \"6562500.00\",
+  \"amenities\": [
+    \"24/7 Security\",
+    \"Concierge\",
+    \"Fitness Center\",
+    \"Conference Rooms\"
+  ],
+  \"zoning\": \"C5-3\",
+  \"occupancyPercentage\": \"0.00\",
+  \"vacancyPercentage\": \"100.00\",
+  \"utilities\": {
+    \"gas\": true,
+    \"sewer\": true,
+    \"water\": true,
+    \"internet\": true,
+    \"electricity\": true
+  },
+  \"images\": [],
+  \"floorPlans\": [],
+  \"sitePlans\": [],
+  \"documents\": [],
+  \"offeringMemorandum\": null,
+  \"virtualTourUrl\": null,
+  \"description\": \"Prime Class A office tower in the heart of Manhattan with stunning city views.\",
+  \"marketingRemarks\": null,
+  \"keyFeatures\": [
+    \"Corner location\",
+    \"High-speed elevators\",
+    \"LEED Gold certified\"
+  ],
+  \"highlights\": null,
+  \"leaseTerms\": {
+    \"maxTerm\": null,
+    \"minTerm\": null,
+    \"renewalOptions\": null,
+    \"securityDeposit\": null,
+    \"personalGuaranteeRequired\": false
+  },
+  \"availabilityDate\": null,
+  \"daysOnMarket\": 45,
+  \"views\": 0,
+  \"inquiries\": 0,
+  \"showings\": 0,
+  \"ownerId\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+  \"landlordName\": null,
+  \"tenantRoster\": [],
+  \"listingAgentId\": \"00000000-0000-0000-0000-000000000001\",
+  \"internalPropertyId\": null,
+  \"notes\": null,
+  \"tags\": [],
+  \"linkedDeals\": [],
+  \"isActive\": true,
+  \"source\": \"manual\",
+  \"lastSyncedAt\": null,
+  \"createdAt\": \"2025-10-08T16:22:32.679Z\",
+  \"updatedAt\": \"2025-10-08T16:22:32.679Z\",
+  \"deletedAt\": null,
+  \"listingAgent\": {
+    \"id\": \"00000000-0000-0000-0000-000000000001\",
+    \"firstName\": \"Demo\",
+    \"lastName\": \"Admin\",
+    \"email\": \"admin@demo.com\",
+    \"phone\": null
+  },
+  \"owner\": {
+    \"id\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+    \"firstName\": \"Robert\",
+    \"lastName\": \"Williams\",
+    \"companyName\": \"Williams Family Trust\",
+    \"primaryEmail\": \"r.williams@wfamilytrust.com\"
+  }
+}"
+[Log] 🏢 Setting properties array with length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 348)
+[Log] 🏢 Properties API Response: – Object (src_pages_Properties_Properties_js.chunk.js, line 343)
+Object
+[Log] 🏢 Properties count: – 20 (src_pages_Properties_Properties_js.chunk.js, line 344)
+[Log] 🏢 Response keys: – Array (2) (src_pages_Properties_Properties_js.chunk.js, line 345)
+Array (2)
+[Log] 🏢 First property full: – "{↵  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",↵  \"mlsNumber\": \"MLS-NYC-001\",↵  \"name\": \"Manhattan Financial Tower\",↵  \"propertyType\"…" (src_pages_Properties_Properties_js.chunk.js, line 346)
+"{
+  \"id\": \"ad8741d0-05c9-4116-afc0-a8b1e21deee5\",
+  \"mlsNumber\": \"MLS-NYC-001\",
+  \"name\": \"Manhattan Financial Tower\",
+  \"propertyType\": \"office\",
+  \"buildingClass\": \"A\",
+  \"status\": \"available\",
+  \"marketingStatus\": \"published\",
+  \"listingType\": \"sale\",
+  \"address\": \"350 Fifth Avenue\",
+  \"city\": \"New York\",
+  \"state\": \"NY\",
+  \"zipCode\": \"10118\",
+  \"county\": \"New York\",
+  \"country\": \"US\",
+  \"latitude\": \"40.74880000\",
+  \"longitude\": \"-73.98570000\",
+  \"totalSquareFootage\": 250000,
+  \"availableSquareFootage\": 250000,
+  \"lotSize\": \"0.50\",
+  \"lotSizeUnit\": \"acres\",
+  \"yearBuilt\": 2015,
+  \"floors\": 35,
+  \"units\": null,
+  \"parkingSpaces\": 150,
+  \"parkingRatio\": \"2.50\",
+  \"ceilingHeight\": \"12.0\",
+  \"clearHeight\": null,
+  \"loadingDocks\": 0,
+  \"driveInDoors\": 0,
+  \"lotDimensions\": null,
+  \"listPrice\": \"125000000.00\",
+  \"pricePerSquareFoot\": \"500.00\",
+  \"leaseRate\": null,
+  \"leaseRateUnit\": \"per_sqft_annual\",
+  \"leaseType\": null,
+  \"operatingExpenses\": null,
+  \"taxes\": null,
+  \"capRate\": \"0.0525\",
+  \"netOperatingIncome\": \"6562500.00\",
+  \"amenities\": [
+    \"24/7 Security\",
+    \"Concierge\",
+    \"Fitness Center\",
+    \"Conference Rooms\"
+  ],
+  \"zoning\": \"C5-3\",
+  \"occupancyPercentage\": \"0.00\",
+  \"vacancyPercentage\": \"100.00\",
+  \"utilities\": {
+    \"gas\": true,
+    \"sewer\": true,
+    \"water\": true,
+    \"internet\": true,
+    \"electricity\": true
+  },
+  \"images\": [],
+  \"floorPlans\": [],
+  \"sitePlans\": [],
+  \"documents\": [],
+  \"offeringMemorandum\": null,
+  \"virtualTourUrl\": null,
+  \"description\": \"Prime Class A office tower in the heart of Manhattan with stunning city views.\",
+  \"marketingRemarks\": null,
+  \"keyFeatures\": [
+    \"Corner location\",
+    \"High-speed elevators\",
+    \"LEED Gold certified\"
+  ],
+  \"highlights\": null,
+  \"leaseTerms\": {
+    \"maxTerm\": null,
+    \"minTerm\": null,
+    \"renewalOptions\": null,
+    \"securityDeposit\": null,
+    \"personalGuaranteeRequired\": false
+  },
+  \"availabilityDate\": null,
+  \"daysOnMarket\": 45,
+  \"views\": 0,
+  \"inquiries\": 0,
+  \"showings\": 0,
+  \"ownerId\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+  \"landlordName\": null,
+  \"tenantRoster\": [],
+  \"listingAgentId\": \"00000000-0000-0000-0000-000000000001\",
+  \"internalPropertyId\": null,
+  \"notes\": null,
+  \"tags\": [],
+  \"linkedDeals\": [],
+  \"isActive\": true,
+  \"source\": \"manual\",
+  \"lastSyncedAt\": null,
+  \"createdAt\": \"2025-10-08T16:22:32.679Z\",
+  \"updatedAt\": \"2025-10-08T16:22:32.679Z\",
+  \"deletedAt\": null,
+  \"listingAgent\": {
+    \"id\": \"00000000-0000-0000-0000-000000000001\",
+    \"firstName\": \"Demo\",
+    \"lastName\": \"Admin\",
+    \"email\": \"admin@demo.com\",
+    \"phone\": null
+  },
+  \"owner\": {
+    \"id\": \"14da2ba9-5911-4db1-b919-6c2d303b9d05\",
+    \"firstName\": \"Robert\",
+    \"lastName\": \"Williams\",
+    \"companyName\": \"Williams Family Trust\",
+    \"primaryEmail\": \"r.williams@wfamilytrust.com\"
+  }
+}"
+[Log] 🏢 Setting properties array with length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 348)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢 FILTERING - properties.length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 469)
+[Log] 🏢 FILTERING - debouncedSearch: – "" (src_pages_Properties_Properties_js.chunk.js, line 470)
+[Log] 🏢 FILTERING - selectedType: – "" (src_pages_Properties_Properties_js.chunk.js, line 471)
+[Log] 🏢 FILTERING - selectedStatus: – "" (src_pages_Properties_Properties_js.chunk.js, line 472)
+[Log] 🏢 FILTERED - filtered.length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 509)
+[Log] 🏢 PAGINATION - filteredAndSortedProperties.length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 514)
+[Log] 🏢 PAGINATION - page: – 1 – "itemsPerPage:" – 12 (src_pages_Properties_Properties_js.chunk.js, line 515)
+[Log] 🏢 PAGINATION - paginated.length: – 12 (src_pages_Properties_Properties_js.chunk.js, line 519)
+[Log] 🏢 PAGINATION - First paginated property: – "Bellevue Office Park" (src_pages_Properties_Properties_js.chunk.js, line 520)
+[Log] 🏢🏢🏢 PROPERTIES COMPONENT RENDERING (src_pages_Properties_Properties_js.chunk.js, line 309)
+[Log] 🏢 FILTERING - properties.length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 469)
+[Log] 🏢 FILTERING - debouncedSearch: – "" (src_pages_Properties_Properties_js.chunk.js, line 470)
+[Log] 🏢 FILTERING - selectedType: – "" (src_pages_Properties_Properties_js.chunk.js, line 471)
+[Log] 🏢 FILTERING - selectedStatus: – "" (src_pages_Properties_Properties_js.chunk.js, line 472)
+[Log] 🏢 FILTERED - filtered.length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 509)
+[Log] 🏢 PAGINATION - filteredAndSortedProperties.length: – 20 (src_pages_Properties_Properties_js.chunk.js, line 514)
+[Log] 🏢 PAGINATION - page: – 1 – "itemsPerPage:" – 12 (src_pages_Properties_Properties_js.chunk.js, line 515)
+[Log] 🏢 PAGINATION - paginated.length: – 12 (src_pages_Properties_Properties_js.chunk.js, line 519)
+[Log] 🏢 PAGINATION - First paginated property: – "Bellevue Office Park" (src_pages_Properties_Properties_js.chunk.js, line 520)
+[Error] WebSocket connection to 'wss://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev:5000/ws' failed: There was a bad response from the server. (x3)
+[Error] Source Map loading errors (x2)
+[Error] Failed to load resource: The operation couldn’t be completed. (NSURLErrorDomain error 260.) (purify.js.map, line 0)
+[Error] Failed to load resource: The operation couldn’t be completed. (NSURLErrorDomain error 260.) (purify.js.map, line 0)
+> Selected Element
+< <div class="property-overlay MuiBox-root css-4up7yd"></div>
+[Error] WebSocket connection to 'wss://1bfacf49-ded4-4df6-a540-a806a1bd293c-00-21aqmp5jc1pte.riker.replit.dev:5000/ws' failed: There was a bad response from the server.

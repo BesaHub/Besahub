@@ -1,0 +1,39 @@
+You are securing and scaling the BesaHubs CRM for enterprise deployment. 
+The app already has MFA, token rotation, PII encryption, audit logs, GDPR workflows, and monitoring. 
+Now implement the following next-level features:
+
+1. **Secrets Management**
+   - Replace `.env` with integration to a production secret manager (e.g., Vault, Doppler, or AWS Secrets Manager).
+   - Ensure secrets rotate automatically and enforce least privilege.
+   - Update deployment guide to cover secret manager integration.
+
+2. **PII Key Rotation**
+   - Add scheduled ENCRYPTION_KEY rotation process for pgcrypto.
+   - Provide a migration script that decrypts with old key, re-encrypts with new key.
+   - Document rotation workflow in `/docs/security.md`.
+
+3. **Disaster Recovery**
+   - Implement automated daily database backups, encrypted with AES-256.
+   - Store backups in a separate storage bucket with checksum validation.
+   - Add a restore script and test job to verify integrity weekly.
+
+4. **Advanced Compliance**
+   - Map current controls against SOC 2, ISO 27001, and CCPA.
+   - Generate `/docs/compliance.md` explaining how each control is satisfied.
+   - Add missing items such as data retention policy, vendor risk checklist, and access review process.
+
+5. **DDoS & Bot Mitigation**
+   - Add hCaptcha/Cloudflare Turnstile to all public auth endpoints.
+   - Extend rate limiting to include request body size and geo-IP blocking.
+   - Document how to configure production reverse proxy (e.g., Nginx/Cloudflare) for upstream protection.
+
+6. **Secure Testing**
+   - Integrate static application security testing (SAST) with SonarQube or CodeQL.
+   - Add dynamic testing (DAST) with OWASP ZAP in CI/CD.
+   - Document a red-team style penetration test checklist.
+
+Deliverables:
+- Updated code implementing all features above.
+- New documentation: `/docs/compliance.md`, updated `/docs/security.md`.
+- New scripts: `rotateKeys.js`, `backupDatabase.js`, `restoreDatabase.js`.
+- CI/CD workflows for SAST and DAST.
