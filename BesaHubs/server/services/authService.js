@@ -47,12 +47,17 @@ class AuthService {
       source: null
     };
 
-    const user = await User.findByPk(userId);
-    if (user && user.isLocked()) {
-      lockStatus.isLocked = true;
-      lockStatus.lockedUntil = user.lockUntil;
-      lockStatus.source = 'database';
-      return lockStatus;
+    try {
+      const user = await User.findByPk(userId);
+      if (user && user.isLocked()) {
+        lockStatus.isLocked = true;
+        lockStatus.lockedUntil = user.lockUntil;
+        lockStatus.source = 'database';
+        return lockStatus;
+      }
+    } catch (dbError) {
+      // If database is not available, skip database lockout check
+      appLogger.warn('Database unavailable for lockout check, skipping:', dbError.message);
     }
 
     if (!isRedisAvailable()) {

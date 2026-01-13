@@ -12,10 +12,14 @@ const verifyCaptcha = async (req, res, next) => {
   const isDevelopment = process.env.NODE_ENV !== 'production';
   const secretKey = process.env.TURNSTILE_SECRET_KEY;
 
+  // In development mode, always skip captcha verification if secret key is not set
   if (isDevelopment && !secretKey) {
     appLogger.info('🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)');
     return next();
   }
+
+  // In development mode, skip captcha verification entirely if no secret key
+  // This allows the app to work without captcha setup in development
 
   if (!secretKey) {
     appLogger.error('❌ TURNSTILE_SECRET_KEY not configured in production');

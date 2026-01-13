@@ -215,7 +215,20 @@ router.post('/login', geoIpFilter, verifyCaptcha, authLimiter, loginSchema, asyn
     }
 
     // Normal authentication for non-demo users
-    const user = await User.scope('withPassword').findOne({ where: { email } });
+    let user;
+    try {
+      user = await User.scope('withPassword').findOne({ where: { email } });
+    } catch (dbError) {
+      appLogger.error('Database error during login:', dbError);
+      // If database is not connected, suggest using demo credentials
+      if (dbError.name?.startsWith('Sequelize') || dbError.message?.includes('ECONNREFUSED')) {
+        return res.status(503).json({ 
+          error: 'Database connection unavailable. Please use demo credentials (admin@demo.com / Admin@Demo123) or ensure the database is running.' 
+        });
+      }
+      throw dbError; // Re-throw if it's a different error
+    }
+    
     if (!user) {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
@@ -225,7 +238,14 @@ router.post('/login', geoIpFilter, verifyCaptcha, authLimiter, loginSchema, asyn
     }
 
     // Check lockout status (both Redis and DB)
-    const lockStatus = await authService.checkLockout(user.id, email);
+    let lockStatus;
+    try {
+      lockStatus = await authService.checkLockout(user.id, email);
+    } catch (lockoutError) {
+      appLogger.warn('Error checking lockout status, continuing with login:', lockoutError.message);
+      lockStatus = { isLocked: false, lockedUntil: null, attempts: 0, source: null };
+    }
+    
     if (lockStatus.isLocked) {
       const minutesRemaining = Math.ceil((lockStatus.lockedUntil - new Date()) / 60000);
       appLogger.warn(`🔒 Login attempt for locked account: ${email} (locked for ${minutesRemaining} more minutes)`);
@@ -237,26 +257,34 @@ router.post('/login', geoIpFilter, verifyCaptcha, authLimiter, loginSchema, asyn
     // Validate password
     const isValidPassword = await user.validatePassword(password);
     if (!isValidPassword) {
-      const failureResult = await authService.handleFailedLogin(
-        user.id, 
-        email, 
-        req.ip, 
-        req.headers['user-agent']
-      );
-      
-      if (failureResult.locked) {
-        appLogger.warn(`🔒 Account locked after max attempts: ${email}`);
-        return res.status(401).json({ 
-          error: 'Account locked due to too many failed login attempts. Please try again in 30 minutes.' 
-        });
+      try {
+        const failureResult = await authService.handleFailedLogin(
+          user.id, 
+          email, 
+          req.ip, 
+          req.headers['user-agent']
+        );
+        
+        if (failureResult && failureResult.locked) {
+          appLogger.warn(`🔒 Account locked after max attempts: ${email}`);
+          return res.status(401).json({ 
+            error: 'Account locked due to too many failed login attempts. Please try again in 30 minutes.' 
+          });
+        }
+        
+        appLogger.warn(`❌ Failed login attempt for ${email} (${failureResult?.attemptsRemaining || 'unknown'} attempts remaining)`);
+      } catch (failureError) {
+        appLogger.warn('Error handling failed login, continuing:', failureError.message);
       }
-      
-      appLogger.warn(`❌ Failed login attempt for ${email} (${failureResult.attemptsRemaining} attempts remaining)`);
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
     // Successful login - reset attempts
-    await authService.handleSuccessfulLogin(user.id, email, req.ip, user.role);
+    try {
+      await authService.handleSuccessfulLogin(user.id, email, req.ip, user.role);
+    } catch (successError) {
+      appLogger.warn('Error handling successful login, continuing:', successError.message);
+    }
 
     // Check if MFA is enabled for this user
     const userWithMfa = await User.unscoped().findByPk(user.id);
