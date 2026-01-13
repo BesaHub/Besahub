@@ -1,0 +1,47 @@
+{"level":"warn","message":"⚠️  Redis URL not configured - caching disabled","service":"cre-crm-app","timestamp":"2026-01-12 13:29:06"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:07","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:08"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:08","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:09"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:09","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:09"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:09","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:10"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:10","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:10"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:10","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:11"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:11","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:11"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:11","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:12"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:12","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:12"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:12","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:13"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:13","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:27"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:27"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:27"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:27"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:27"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Duplicate request detected within 1 second","path":"/login","service":"cre-crm-app","signature":"::ffff:127.0.0.1-undefined-f5e5202ae6595ea0","timeSinceLastRequest":8,"timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Duplicate request detected within 1 second","path":"/login","service":"cre-crm-app","signature":"::ffff:127.0.0.1-undefined-f5e5202ae6595ea0","timeSinceLastRequest":14,"timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Duplicate request detected within 1 second","path":"/login","service":"cre-crm-app","signature":"::ffff:127.0.0.1-undefined-f5e5202ae6595ea0","timeSinceLastRequest":27,"timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32","user":"anonymous"}
+{"level":"info","message":"🔧 Captcha verification skipped in development (TURNSTILE_SECRET_KEY not set)","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Duplicate request detected within 1 second","path":"/login","service":"cre-crm-app","signature":"::ffff:127.0.0.1-undefined-f5e5202ae6595ea0","timeSinceLastRequest":30,"timestamp":"2026-01-12 13:29:32"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"⚠️ Rate limit exceeded: auth-limiter","method":"POST","path":"/login","service":"cre-crm-app","timestamp":"2026-01-12 13:29:32","user":"anonymous"}

@@ -9,6 +9,11 @@
             "date": 1767910337953,
             "name": "/Users/brycedunbar/Desktop/BesaHub/BesaHubs/server/logs/security-2026-01-08.log",
             "hash": "d7f52f55940943f0739561751457cc1c92c4685bc5075724dfe58c866ce38599"
+        },
+        {
+            "date": 1768253346076,
+            "name": "/Users/brycedunbar/Desktop/BesaHub/BesaHubs/server/logs/security-2026-01-12.log",
+            "hash": "b96bd06ee23ed2f73dea3bf790ba83b36d76a9ff81ccd0319268162d708161de"
         }
     ],
     "hashType": "sha256"
