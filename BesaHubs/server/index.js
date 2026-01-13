@@ -6,7 +6,7 @@ const multer = require('multer');
 const http = require('http');
 const socketIo = require('socket.io');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const { sequelize, testConnection } = require('./config/database');
 // Import all models to ensure they're loaded before sync

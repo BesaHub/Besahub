@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24">
+  <!-- Clock circle -->
+  <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" fill="none"/>
+  <!-- Clock hands -->
+  <line x1="12" y1="12" x2="12" y2="7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="12" x2="15" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <!-- Dollar sign in center -->
+  <text x="12" y="18" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Arial, sans-serif">$</text>
+</svg>

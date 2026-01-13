@@ -326,7 +326,28 @@ const Dashboard = () => {
       trend: null,
       isPositive: false,
       colorTheme: 'error',
-      icon: <AccountBalance sx={{ fontSize: 24, color: 'white' }} />,
+      icon: (
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24 }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{ display: 'block' }}>
+            {/* Clock circle with dark blue/navy background */}
+            <circle cx="12" cy="12" r="10" fill="#1a237e" stroke="#283593" strokeWidth="1.5"/>
+            {/* Clock circle outline */}
+            <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.5" fill="none"/>
+            {/* Clock hour markers - white on dark background */}
+            <circle cx="12" cy="5" r="1" fill="white"/>
+            <circle cx="19" cy="12" r="1" fill="white"/>
+            <circle cx="12" cy="19" r="1" fill="white"/>
+            <circle cx="5" cy="12" r="1" fill="white"/>
+            {/* Clock hands - white */}
+            <line x1="12" y1="12" x2="12" y2="7.5" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="12" y1="12" x2="16" y2="12" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+            {/* Center dot - white */}
+            <circle cx="12" cy="12" r="1.5" fill="white"/>
+            {/* Dollar sign - gold/yellow for visibility */}
+            <text x="12" y="17.5" textAnchor="middle" fill="#ffd700" fontSize="10" fontWeight="bold" fontFamily="system-ui, Arial, sans-serif">$</text>
+          </svg>
+        </Box>
+      ),
       gradient: theme.palette.gradient.error,
       link: '/debt'
     }
