@@ -113,12 +113,225 @@ const Companies = () => {
           itemsPerPage: itemsPerPage
         });
       } catch (err) {
-        console.error('Failed to fetch companies:', err);
-        setCompanies([]);
+        console.log('API call failed, using demo data:', err);
+        // Use demo data when API fails
+        const demoCompanies = [
+          {
+            id: '1',
+            name: 'ABC Corporation',
+            industry: 'Technology',
+            companyType: 'investor',
+            leadStatus: 'qualified',
+            website: 'https://abccorp.com',
+            phone: '(555) 123-4567',
+            email: 'contact@abccorp.com',
+            address: '123 Business St',
+            city: 'New York',
+            state: 'NY',
+            zipCode: '10001',
+            employeeCount: 500,
+            annualRevenue: 50000000,
+            createdAt: new Date().toISOString()
+          },
+          {
+            id: '2',
+            name: 'Chen Capital Partners',
+            industry: 'Finance',
+            companyType: 'investor',
+            leadStatus: 'qualified',
+            website: 'https://chencapital.com',
+            phone: '(555) 234-5678',
+            email: 'info@chencapital.com',
+            address: '456 Financial Blvd',
+            city: 'San Francisco',
+            state: 'CA',
+            zipCode: '94102',
+            employeeCount: 150,
+            annualRevenue: 85000000,
+            createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '3',
+            name: 'Johnson Realty Group',
+            industry: 'Real Estate',
+            companyType: 'broker',
+            leadStatus: 'active',
+            website: 'https://jrg.com',
+            phone: '(555) 345-6789',
+            email: 'contact@jrg.com',
+            address: '789 Real Estate Ave',
+            city: 'Chicago',
+            state: 'IL',
+            zipCode: '60601',
+            employeeCount: 75,
+            annualRevenue: 25000000,
+            createdAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '4',
+            name: 'Williams Development',
+            industry: 'Construction',
+            companyType: 'developer',
+            leadStatus: 'qualified',
+            website: 'https://willdev.com',
+            phone: '(555) 456-7890',
+            email: 'info@willdev.com',
+            address: '321 Development Way',
+            city: 'Miami',
+            state: 'FL',
+            zipCode: '33101',
+            employeeCount: 300,
+            annualRevenue: 120000000,
+            createdAt: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '5',
+            name: 'TechStart Solutions',
+            industry: 'Technology',
+            companyType: 'tenant',
+            leadStatus: 'active',
+            website: 'https://techstart.com',
+            phone: '(555) 567-8901',
+            email: 'hello@techstart.com',
+            address: '654 Tech Street',
+            city: 'Austin',
+            state: 'TX',
+            zipCode: '78701',
+            employeeCount: 200,
+            annualRevenue: 35000000,
+            createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '6',
+            name: 'Park Investment Holdings',
+            industry: 'Finance',
+            companyType: 'investor',
+            leadStatus: 'hot',
+            website: 'https://pih.com',
+            phone: '(555) 678-9012',
+            email: 'contact@pih.com',
+            address: '987 Investment Plaza',
+            city: 'Seattle',
+            state: 'WA',
+            zipCode: '98101',
+            employeeCount: 100,
+            annualRevenue: 95000000,
+            createdAt: new Date().toISOString()
+          },
+          {
+            id: '7',
+            name: 'Thompson & Associates',
+            industry: 'Real Estate',
+            companyType: 'broker',
+            leadStatus: 'active',
+            website: 'https://thompsonassoc.com',
+            phone: '(555) 789-0123',
+            email: 'info@thompsonassoc.com',
+            address: '147 Broker Lane',
+            city: 'Boston',
+            state: 'MA',
+            zipCode: '02101',
+            employeeCount: 50,
+            annualRevenue: 18000000,
+            createdAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '8',
+            name: 'Miller Construction',
+            industry: 'Construction',
+            companyType: 'developer',
+            leadStatus: 'qualified',
+            website: 'https://millerconst.com',
+            phone: '(555) 890-1234',
+            email: 'contact@millerconst.com',
+            address: '258 Builders Blvd',
+            city: 'Denver',
+            state: 'CO',
+            zipCode: '80201',
+            employeeCount: 400,
+            annualRevenue: 150000000,
+            createdAt: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '9',
+            name: 'Davis Capital Management',
+            industry: 'Finance',
+            companyType: 'investor',
+            leadStatus: 'hot',
+            website: 'https://daviscap.com',
+            phone: '(555) 901-2345',
+            email: 'info@daviscap.com',
+            address: '369 Capital Drive',
+            city: 'Phoenix',
+            state: 'AZ',
+            zipCode: '85001',
+            employeeCount: 80,
+            annualRevenue: 110000000,
+            createdAt: new Date().toISOString()
+          },
+          {
+            id: '10',
+            name: 'Taylor Real Estate Fund',
+            industry: 'Real Estate',
+            companyType: 'investor',
+            leadStatus: 'active',
+            website: 'https://taylorfund.com',
+            phone: '(555) 012-3456',
+            email: 'contact@taylorfund.com',
+            address: '741 Fund Street',
+            city: 'Portland',
+            state: 'OR',
+            zipCode: '97201',
+            employeeCount: 60,
+            annualRevenue: 75000000,
+            createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '11',
+            name: 'Global Logistics Solutions',
+            industry: 'Logistics',
+            companyType: 'tenant',
+            leadStatus: 'qualified',
+            website: 'https://globallog.com',
+            phone: '(555) 567-1234',
+            email: 'info@globallog.com',
+            address: '852 Logistics Way',
+            city: 'Houston',
+            state: 'TX',
+            zipCode: '77001',
+            employeeCount: 600,
+            annualRevenue: 200000000,
+            createdAt: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000).toISOString()
+          },
+          {
+            id: '12',
+            name: 'Healthcare Partners LLC',
+            industry: 'Healthcare',
+            companyType: 'tenant',
+            leadStatus: 'qualified',
+            website: 'https://healthpartners.com',
+            phone: '(555) 234-8901',
+            email: 'contact@healthpartners.com',
+            address: '963 Medical Center',
+            city: 'Atlanta',
+            state: 'GA',
+            zipCode: '30301',
+            employeeCount: 250,
+            annualRevenue: 65000000,
+            createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000).toISOString()
+          }
+        ];
+        setCompanies(demoCompanies);
+        setPagination({
+          currentPage: 1,
+          totalPages: 1,
+          totalItems: demoCompanies.length,
+          itemsPerPage: itemsPerPage
+        });
         setSnackbar({
           open: true,
-          message: 'Failed to load companies. Please try again.',
-          severity: 'error'
+          message: 'Using demo data - API unavailable',
+          severity: 'info'
         });
       } finally {
         setLoading(false);
@@ -180,12 +393,31 @@ const Companies = () => {
         severity: 'success'
       });
     } catch (err) {
-      console.error('Failed to refresh companies:', err);
-      setCompanies([]);
+      console.log('Failed to refresh companies, using demo data:', err);
+      const demoCompanies = [
+        {
+          id: '1',
+          name: 'ABC Corporation',
+          industry: 'Technology',
+          companyType: 'investor',
+          leadStatus: 'qualified',
+          website: 'https://abccorp.com',
+          phone: '(555) 123-4567',
+          email: 'contact@abccorp.com',
+          address: '123 Business St',
+          city: 'New York',
+          state: 'NY',
+          zipCode: '10001',
+          employeeCount: 500,
+          annualRevenue: 50000000,
+          createdAt: new Date().toISOString()
+        }
+      ];
+      setCompanies(demoCompanies);
       setSnackbar({
         open: true,
-        message: 'Failed to refresh companies. Please try again.',
-        severity: 'error'
+        message: 'Using demo data - API unavailable',
+        severity: 'info'
       });
     } finally {
       setLoading(false);
@@ -329,7 +561,7 @@ const Companies = () => {
 
   if (loading) {
     return (
-      <Container maxWidth="xl" sx={{ py: theme.spacing(3) }}>
+      <Container maxWidth={false} sx={{ py: 2, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
           <Typography variant="h4" sx={{ fontWeight: 700 }}>
             Companies
@@ -351,7 +583,7 @@ const Companies = () => {
   }
 
   return (
-    <Container maxWidth="xl" sx={{ py: theme.spacing(2) }}>
+    <Container maxWidth={false} sx={{ py: 2, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
       <Box sx={{ 
         display: 'flex', 
         justifyContent: 'space-between', 

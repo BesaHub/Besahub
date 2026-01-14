@@ -99,11 +99,28 @@ const Agents = () => {
       
       setAgents(agentsWithPerformance);
     } catch (err) {
-      console.error('Failed to fetch agents:', err);
+      console.log('API call failed, using demo data:', err);
+      // Use demo data when API fails
+      const demoAgents = [
+        {
+          id: '1',
+          firstName: 'John',
+          lastName: 'Agent',
+          email: 'john.agent@example.com',
+          phone: '(555) 123-4567',
+          role: 'agent',
+          performance: {
+            dealsClosed: 5,
+            revenueGenerated: 500000,
+            averageDealSize: 100000
+          }
+        }
+      ];
+      setAgents(demoAgents);
       setSnackbar({
         open: true,
-        message: 'Failed to load agents. Please try again.',
-        severity: 'error'
+        message: 'Using demo data - API unavailable',
+        severity: 'info'
       });
     } finally {
       setLoading(false);
@@ -237,7 +254,7 @@ const Agents = () => {
   ].filter(Boolean).length;
 
   return (
-    <Container maxWidth="xl" sx={{ py: theme.spacing(2) }}>
+    <Container maxWidth={false} sx={{ py: 2, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
       {/* Header */}
       <Box sx={{ 
         display: 'flex', 

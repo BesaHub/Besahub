@@ -163,16 +163,20 @@ const HorizontalNavigation = () => {
       sx={{
         borderBottom: 1,
         borderColor: 'divider',
-        p: 2,
-        backgroundColor: '#f8f9fa'
+        p: { xs: 1, sm: 1.5, md: 2 },
+        backgroundColor: '#f8f9fa',
+        width: '100%',
+        maxWidth: '100%'
       }}
     >
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
-          gap: 1,
-          flexWrap: 'wrap'
+          gap: { xs: 0.5, sm: 1, md: 1.5 },
+          flexWrap: 'wrap',
+          width: '100%',
+          justifyContent: 'flex-start'
         }}
       >
         {/* Core Navigation Items */}

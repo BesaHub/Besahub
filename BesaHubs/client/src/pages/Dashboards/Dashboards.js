@@ -183,7 +183,7 @@ const Dashboards = () => {
   }
 
   return (
-    <Container maxWidth="xl" sx={{ py: 3 }}>
+    <Container maxWidth={false} sx={{ py: 3, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
         <Typography variant="h4" fontWeight="bold">
           Dashboards

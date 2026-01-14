@@ -52,6 +52,17 @@ export const getScreenReaderText = (value, format = 'number') => {
     case 'number':
       return value.toLocaleString();
     case 'date':
+      // Avoid timezone shifts when parsing date-only strings like "2023-12-25"
+      // (new Date("YYYY-MM-DD") is interpreted as UTC in many JS engines).
+      if (typeof value === 'string') {
+        const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (m) {
+          const year = Number(m[1]);
+          const monthIndex = Number(m[2]) - 1; // 0-based
+          const day = Number(m[3]);
+          return new Date(year, monthIndex, day).toLocaleDateString();
+        }
+      }
       return new Date(value).toLocaleDateString();
     default:
       return String(value);

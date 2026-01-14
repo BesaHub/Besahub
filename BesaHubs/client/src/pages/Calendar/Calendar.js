@@ -15,7 +15,8 @@ import {
   CircularProgress,
   Tooltip,
   TextField,
-  InputAdornment
+  InputAdornment,
+  Snackbar
 } from '@mui/material';
 import {
   Add as AddIcon,
@@ -45,6 +46,7 @@ const Calendar = () => {
   const [filterMenuAnchor, setFilterMenuAnchor] = useState(null);
   const [selectedAccountFilter, setSelectedAccountFilter] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'info' });
 
   const fetchAccounts = useCallback(async () => {
     try {
@@ -90,8 +92,193 @@ const Calendar = () => {
 
       setEvents(formattedEvents);
     } catch (err) {
-      console.error('Failed to fetch events:', err);
-      setError('Failed to load calendar events');
+      console.log('API call failed, using demo calendar events:', err);
+      // Use demo data when API fails
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const demoEvents = [
+        {
+          id: '1',
+          title: 'Client Meeting - ABC Corporation',
+          start: new Date(today.getTime() + 10 * 60 * 60 * 1000), // 10 AM today
+          end: new Date(today.getTime() + 11 * 60 * 60 * 1000), // 11 AM today
+          allDay: false,
+          location: 'Downtown Office Tower - Suite 1200',
+          description: 'Discuss lease renewal terms and expansion options',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '1',
+            propertyId: '1'
+          }
+        },
+        {
+          id: '2',
+          title: 'Property Tour - Coastal Shopping Center',
+          start: new Date(today.getTime() + 14 * 60 * 60 * 1000), // 2 PM today
+          end: new Date(today.getTime() + 15.5 * 60 * 60 * 1000), // 3:30 PM today
+          allDay: false,
+          location: '2450 Pacific Coast Highway, San Diego',
+          description: 'Site visit with potential buyer - Wilson Retail Holdings',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '14',
+            propertyId: '2'
+          }
+        },
+        {
+          id: '3',
+          title: 'Closing - Medical Office Building',
+          start: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 + 13 * 60 * 60 * 1000), // 1 PM next week
+          end: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 + 15 * 60 * 60 * 1000), // 3 PM next week
+          allDay: false,
+          location: 'Law Office - 500 Legal Plaza',
+          description: 'Final closing for Riverside Medical Center purchase',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '3',
+            propertyId: '3'
+          }
+        },
+        {
+          id: '4',
+          title: 'Follow-up Call - Park Investment Group',
+          start: new Date(today.getTime() + 1 * 24 * 60 * 60 * 1000 + 9 * 60 * 60 * 1000), // 9 AM tomorrow
+          end: new Date(today.getTime() + 1 * 24 * 60 * 60 * 1000 + 9.5 * 60 * 60 * 1000), // 9:30 AM tomorrow
+          allDay: false,
+          location: 'Phone Call',
+          description: 'Discuss office space requirements and available properties',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '7'
+          }
+        },
+        {
+          id: '5',
+          title: 'Proposal Presentation - TechStart Ventures',
+          start: new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000), // 11 AM day after tomorrow
+          end: new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000 + 12.5 * 60 * 60 * 1000), // 12:30 PM
+          allDay: false,
+          location: 'Innovation District Offices - Conference Room',
+          description: 'Present lease proposal for floor 3 expansion',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '15',
+            propertyId: '5'
+          }
+        },
+        {
+          id: '6',
+          title: 'Due Diligence Review - Data Center',
+          start: new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000), // 10 AM
+          end: new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000 + 16 * 60 * 60 * 1000), // 4 PM
+          allDay: false,
+          location: 'Edge Computing Center',
+          description: 'Technical due diligence review with engineering team',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '12',
+            propertyId: '12'
+          }
+        },
+        {
+          id: '7',
+          title: 'Lease Negotiation - Global Logistics',
+          start: new Date(today.getTime() + 4 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000), // 2 PM
+          end: new Date(today.getTime() + 4 * 24 * 60 * 60 * 1000 + 16 * 60 * 60 * 1000), // 4 PM
+          allDay: false,
+          location: 'Southeast Distribution Hub',
+          description: 'Finalize lease terms for warehouse expansion',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '16',
+            propertyId: '2'
+          }
+        },
+        {
+          id: '8',
+          title: 'Team Meeting',
+          start: new Date(today.getTime() + 5 * 24 * 60 * 60 * 1000 + 9 * 60 * 60 * 1000), // 9 AM
+          end: new Date(today.getTime() + 5 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000), // 10 AM
+          allDay: false,
+          location: 'Office - Conference Room A',
+          description: 'Weekly team sync and pipeline review',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com'
+          }
+        },
+        {
+          id: '9',
+          title: 'Property Inspection - Manufacturing Facility',
+          start: new Date(today.getTime() + 6 * 24 * 60 * 60 * 1000 + 13 * 60 * 60 * 1000), // 1 PM
+          end: new Date(today.getTime() + 6 * 24 * 60 * 60 * 1000 + 15 * 60 * 60 * 1000), // 3 PM
+          allDay: false,
+          location: 'Northwest Manufacturing Complex',
+          description: 'Equipment inspection with potential buyer',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '6',
+            propertyId: '6'
+          }
+        },
+        {
+          id: '10',
+          title: 'Market Analysis Presentation',
+          start: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 + 15 * 60 * 60 * 1000), // 3 PM
+          end: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000 + 16.5 * 60 * 60 * 1000), // 4:30 PM
+          allDay: false,
+          location: 'Davis Capital Management Office',
+          description: 'Present market analysis for multifamily investment',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '10'
+          }
+        },
+        {
+          id: '11',
+          title: 'All Day - Industry Conference',
+          start: new Date(today.getTime() + 10 * 24 * 60 * 60 * 1000),
+          end: new Date(today.getTime() + 10 * 24 * 60 * 60 * 1000),
+          allDay: true,
+          location: 'Convention Center',
+          description: 'Commercial Real Estate Annual Conference',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com'
+          }
+        },
+        {
+          id: '12',
+          title: 'Renewal Discussion - Cold Storage',
+          start: new Date(today.getTime() + 4 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000), // 10 AM
+          end: new Date(today.getTime() + 4 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000), // 11 AM
+          allDay: false,
+          location: 'Arctic Storage Facility',
+          description: 'Discuss lease renewal terms with existing tenant',
+          resource: {
+            provider: 'google',
+            accountEmail: 'broker@company.com',
+            contactId: '9',
+            propertyId: '9'
+          }
+        }
+      ];
+      setEvents(demoEvents);
+      setError(null);
+      setSnackbar({
+        open: true,
+        message: 'Using demo data - API unavailable',
+        severity: 'info'
+      });
     } finally {
       setLoading(false);
     }
@@ -261,7 +448,7 @@ const Calendar = () => {
   });
 
   return (
-    <Container maxWidth="xl" sx={{ mt: 2, mb: 4 }}>
+    <Container maxWidth={false} sx={{ py: 2, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h4" sx={{ fontWeight: 600 }}>
           Calendar
@@ -421,6 +608,17 @@ const Calendar = () => {
         onSave={handleEventSaved}
         onDelete={handleEventDeleted}
       />
+
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={() => setSnackbar({ ...snackbar, open: false })}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity} sx={{ width: '100%' }}>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 };

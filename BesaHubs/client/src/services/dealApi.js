@@ -209,49 +209,90 @@ export const DEAL_STAGES = [
     name: 'Prospecting',
     description: 'Initial contact and qualification',
     probability: 10,
-    color: '#e3f2fd'
+    color: '#2196f3', // Blue - vibrant and readable
+    bgColor: '#e3f2fd', // Light blue background
+    textColor: '#ffffff' // White text for contrast
   },
   {
     id: 'qualification',
     name: 'Qualification',
     description: 'Assessing fit and requirements',
     probability: 25,
-    color: '#f3e5f5'
+    color: '#9c27b0', // Purple - vibrant and readable
+    bgColor: '#f3e5f5', // Light purple background
+    textColor: '#ffffff' // White text for contrast
   },
   {
     id: 'proposal',
     name: 'Proposal',
     description: 'Preparing and presenting offer',
     probability: 50,
-    color: '#fff3e0'
+    color: '#ff9800', // Orange - vibrant and readable
+    bgColor: '#fff3e0', // Light orange background
+    textColor: '#ffffff' // White text for contrast
   },
   {
     id: 'negotiation',
     name: 'Negotiation',
     description: 'Terms and price negotiation',
     probability: 75,
-    color: '#e8f5e8'
+    color: '#4caf50', // Green - vibrant and readable
+    bgColor: '#e8f5e8', // Light green background
+    textColor: '#ffffff' // White text for contrast
+  },
+  {
+    id: 'due_diligence',
+    name: 'Due Diligence',
+    description: 'Reviewing property and documents',
+    probability: 65,
+    color: '#00bcd4', // Cyan - vibrant and readable
+    bgColor: '#e0f7fa', // Light cyan background
+    textColor: '#ffffff' // White text for contrast
+  },
+  {
+    id: 'closing',
+    name: 'Closing',
+    description: 'Finalizing transaction',
+    probability: 95,
+    color: '#009688', // Teal - vibrant and readable
+    bgColor: '#e0f2f1', // Light teal background
+    textColor: '#ffffff' // White text for contrast
   },
   {
     id: 'contract',
     name: 'Contract',
     description: 'Finalizing legal agreements',
     probability: 90,
-    color: '#e1f5fe'
+    color: '#00bcd4', // Cyan - vibrant and readable
+    bgColor: '#e0f7fa', // Light cyan background
+    textColor: '#ffffff' // White text for contrast
+  },
+  {
+    id: 'marketing',
+    name: 'Marketing',
+    description: 'Property listed for sale/lease',
+    probability: 30,
+    color: '#ff5722', // Deep orange - vibrant and readable
+    bgColor: '#fbe9e7', // Light orange background
+    textColor: '#ffffff' // White text for contrast
   },
   {
     id: 'closed_won',
     name: 'Closed Won',
     description: 'Deal successfully completed',
     probability: 100,
-    color: '#e8f5e8'
+    color: '#4caf50', // Green - vibrant and readable
+    bgColor: '#e8f5e8', // Light green background
+    textColor: '#ffffff' // White text for contrast
   },
   {
     id: 'closed_lost',
     name: 'Closed Lost',
     description: 'Deal not successful',
     probability: 0,
-    color: '#ffebee'
+    color: '#f44336', // Red - vibrant and readable
+    bgColor: '#ffebee', // Light red background
+    textColor: '#ffffff' // White text for contrast
   }
 ];
 

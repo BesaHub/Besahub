@@ -137,7 +137,9 @@ const Layout = ({ children }) => {
           background: 'white',
           color: '#333',
           boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.05)',
-          borderBottom: '1px solid #e0e0e0'
+          borderBottom: '1px solid #e0e0e0',
+          width: '100%',
+          maxWidth: '100%'
         }}
         elevation={0}
       >
@@ -145,8 +147,10 @@ const Layout = ({ children }) => {
           justifyContent: 'space-between', 
           gap: { xs: 0.5, sm: 1, lg: 1.5 }, 
           py: 0.5, 
-          px: { xs: 1, sm: 2 },
-          minHeight: '56px !important' 
+          px: { xs: 2, sm: 3, md: 4, lg: 5 },
+          minHeight: '56px !important',
+          maxWidth: '100%',
+          width: '100%'
         }}>
           <Typography 
             variant="h5" 
@@ -260,7 +264,9 @@ const Layout = ({ children }) => {
           flexGrow: 1,
           bgcolor: '#f8f9fa',
           minHeight: 'calc(100vh - 120px)',
-          p: 3
+          p: { xs: 2, sm: 2.5, md: 3 },
+          width: '100%',
+          maxWidth: '100%'
         }}
       >
         {children}

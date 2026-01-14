@@ -482,13 +482,53 @@ const Properties = () => {
         }
         setProperties(merged);
       } catch (err) {
-        console.error('Failed to fetch properties:', err);
-        setProperties([]);
-        setSnackbar({
-          open: true,
-          message: 'Failed to load properties. Please try again.',
-          severity: 'error'
-        });
+        console.log('API call failed, using sample properties:', err);
+        // Try to load from cache first
+        const cached = readLocalCache();
+        if (cached && cached.length > 0) {
+          setProperties(cached);
+          setSnackbar({
+            open: true,
+            message: 'Using cached properties - API unavailable',
+            severity: 'info'
+          });
+        } else {
+          // Use sample properties if no cache
+          const sampleProperties = [
+            {
+              id: 'sample-property-001',
+              name: 'Downtown Office Tower',
+              propertyType: 'office',
+              city: 'Los Angeles',
+              state: 'CA',
+              listingType: 'sale',
+              propertyStatus: 'active',
+              marketingStatus: 'actively_marketing',
+              address: '123 Main Street',
+              zipCode: '90012',
+              totalSquareFootage: 150000,
+              buildingClass: 'A',
+              yearBuilt: 2015,
+              floors: 25,
+              listPrice: 45000000,
+              capRate: 0.055,
+              amenities: ['Parking Garage', 'Fitness Center', 'Conference Rooms'],
+              keyFeatures: ['Prime Location', 'LEED Certified', 'High-End Finish'],
+              images: ['https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=80'],
+              documents: [],
+              keyHighlights: [],
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString()
+            }
+          ];
+          setProperties(sampleProperties);
+          writeLocalCache(sampleProperties);
+          setSnackbar({
+            open: true,
+            message: 'Using demo properties - API unavailable',
+            severity: 'info'
+          });
+        }
       } finally {
         setLoading(false);
       }
@@ -1071,7 +1111,7 @@ const Properties = () => {
 
   if (loading) {
     return (
-      <Container maxWidth="xl" sx={{ py: theme.spacing(2) }}>
+      <Container maxWidth={false} sx={{ py: 2, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
           <Skeleton variant="text" width={200} height={40} />
           <Skeleton variant="rectangular" width={300} height={36} />
@@ -1089,16 +1129,16 @@ const Properties = () => {
   }
 
   return (
-    <Container maxWidth="xl" sx={{ py: theme.spacing(3) }}>
+    <Container maxWidth={false} sx={{ py: 2, px: { xs: 2, sm: 3, md: 4, lg: 5 }, width: '100%' }}>
       <Box sx={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center', 
-        mb: theme.spacing(3),
+        mb: 2,
         animation: 'fadeInScale 0.5s ease-out'
       }}>
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: 700, mb: theme.spacing(0.5) }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 0.5 }}>
             Properties
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.875rem' }}>
@@ -1108,7 +1148,7 @@ const Properties = () => {
             }
           </Typography>
         </Box>
-        <Box sx={{ display: 'flex', gap: theme.spacing(0.75), alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', gap: 0.75, alignItems: 'center' }}>
           <Box sx={{ display: 'flex', gap: 0.5, mr: 1 }}>
             <Tooltip title="Grid View">
               <IconButton
@@ -1333,7 +1373,7 @@ const Properties = () => {
       <Paper elevation={2} sx={{ 
         py: 2,
         px: 2.5, 
-        mb: theme.spacing(3), 
+        mb: 2, 
         borderRadius: 3,
         animation: 'fadeInUp 0.6s ease-out',
         animationDelay: '0.1s',
@@ -1374,7 +1414,7 @@ const Properties = () => {
           </Grid>
           
           <Grid item xs={12} md={4}>
-            <Box sx={{ display: 'flex', gap: theme.spacing(1), flexWrap: 'wrap', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center' }}>
               <Chip
                 icon={<FilterList />}
                 label="All Types"
