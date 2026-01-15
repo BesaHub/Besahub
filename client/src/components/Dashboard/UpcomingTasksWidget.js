@@ -158,8 +158,8 @@ const UpcomingTasksWidget = ({ limit = 5, showHeader = true, onTaskClick }) => {
   if (loading) {
     return (
       <Card>
-        <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 200 }}>
-          <CircularProgress />
+        <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 150, py: 2 }}>
+          <CircularProgress size={32} />
         </CardContent>
       </Card>
     );
@@ -202,9 +202,9 @@ const UpcomingTasksWidget = ({ limit = 5, showHeader = true, onTaskClick }) => {
         />
       )}
       
-      <CardContent>
+      <CardContent sx={{ '&:last-child': { pb: 2 } }}>
         {/* Summary Stats */}
-        <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+        <Box sx={{ display: 'flex', gap: 2, mb: 1.5 }}>
           <Chip
             icon={<PriorityHigh />}
             label={`${highPriorityTasks} High Priority`}
@@ -342,8 +342,8 @@ const UpcomingTasksWidget = ({ limit = 5, showHeader = true, onTaskClick }) => {
 
         {/* Empty State */}
         {tasks.length === 0 && (
-          <Box sx={{ textAlign: 'center', py: 4 }}>
-            <Schedule sx={{ fontSize: 48, color: 'text.secondary', mb: 2 }} />
+          <Box sx={{ textAlign: 'center', py: 2 }}>
+            <Schedule sx={{ fontSize: 36, color: 'text.secondary', mb: 1 }} />
             <Typography variant="body2" color="text.secondary">
               No upcoming tasks
             </Typography>

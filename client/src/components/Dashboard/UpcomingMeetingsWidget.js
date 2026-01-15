@@ -77,8 +77,8 @@ const UpcomingMeetingsWidget = () => {
 
   return (
     <Card sx={{ height: '100%' }}>
-      <CardContent>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+      <CardContent sx={{ '&:last-child': { pb: 2 } }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <CalendarIcon color="primary" />
             <Typography variant="h6" sx={{ fontWeight: 600 }}>
@@ -95,8 +95,8 @@ const UpcomingMeetingsWidget = () => {
         </Box>
 
         {loading && (
-          <Box sx={{ display: 'flex', justifyContent: 'center', py: 3 }}>
-            <CircularProgress size={40} />
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+            <CircularProgress size={32} />
           </Box>
         )}
 
@@ -107,14 +107,14 @@ const UpcomingMeetingsWidget = () => {
         )}
 
         {!loading && !error && events.length === 0 && (
-          <Box sx={{ textAlign: 'center', py: 3 }}>
+          <Box sx={{ textAlign: 'center', py: 2 }}>
             <Typography variant="body2" color="text.secondary">
               No upcoming meetings in the next 7 days
             </Typography>
             <Button
               variant="outlined"
               size="small"
-              sx={{ mt: 2 }}
+              sx={{ mt: 1.5 }}
               onClick={() => navigate('/calendar')}
             >
               View Calendar

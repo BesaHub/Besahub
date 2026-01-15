@@ -30,17 +30,37 @@ const strictSanitize = (input) => {
   if (typeof input !== 'string') return input;
   
   const trimmed = input.trim();
-  const xssFiltered = xss(trimmed, {
+  
+  // Remove javascript: URLs and protocols
+  let cleaned = trimmed.replace(/javascript:/gi, '');
+  cleaned = cleaned.replace(/on\w+\s*=/gi, ''); // Remove event handlers like onclick=, onerror=, etc.
+  cleaned = cleaned.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ''); // Remove script tags
+  cleaned = cleaned.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, ''); // Remove iframes
+  
+  const xssFiltered = xss(cleaned, {
     whiteList: {},
     stripIgnoreTag: true,
-    stripIgnoreTagBody: ['script', 'style']
+    stripIgnoreTagBody: ['script', 'style', 'iframe'],
+    onIgnoreTagAttr: function(tag, name, value) {
+      // Remove all event handlers and javascript: protocols
+      if (name.match(/^on\w+/i)) {
+        return '';
+      }
+      if (value && typeof value === 'string' && value.match(/^javascript:/i)) {
+        return '';
+      }
+      return undefined;
+    }
   });
   
   return sanitizeHtml(xssFiltered, {
     allowedTags: [],
     allowedAttributes: {},
-    disallowedTagsMode: 'discard'
-  });
+    disallowedTagsMode: 'discard',
+    allowedSchemes: ['http', 'https', 'mailto'],
+    allowedSchemesByTag: {},
+    allowedSchemesAppliedToAttributes: []
+  }).replace(/javascript:/gi, '').replace(/on\w+\s*=/gi, ''); // Final cleanup pass
 };
 
 const moderateSanitize = (input) => {

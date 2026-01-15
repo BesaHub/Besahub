@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 90
+    },
+    "auditLog": "/Users/max/Desktop/BesaBesa/Besahub/server/logs/.4bc23da90b5fc60d53fba534a376c29d0b88323d-audit.json",
+    "files": [
+        {
+            "date": 1768443280252,
+            "name": "/Users/max/Desktop/BesaBesa/Besahub/server/logs/error-2026-01-14.log",
+            "hash": "c386468c1787a14579a9158847e727594431fd8209bf0c33ff55e315d2f407ef"
+        },
+        {
+            "date": 1768453784972,
+            "name": "/Users/max/Desktop/BesaBesa/Besahub/server/logs/error-2026-01-15.log",
+            "hash": "ae5daa302fb669ccc3bfee106604680e8190bd9a47bb26ec11c084d6610fcb3f"
+        }
+    ],
+    "hashType": "sha256"
+}

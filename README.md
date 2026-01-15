@@ -47,16 +47,21 @@
 
 5. **Start the development servers:**
    ```bash
-   # Terminal 1 - Start backend (from server directory)
+   # From root directory - starts both server and client
    npm run dev
-   
-   # Terminal 2 - Start frontend (from client directory)
-   npm start
    ```
+   
+   **Note**: The `npm run dev` command automatically sets `DEMO_MODE=true` to enable demo login.
 
 6. **Access the application:**
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:3001
+   
+   **Demo Login Credentials** (requires `DEMO_MODE=true`):
+   - Email: `admin@demo.com`
+   - Password: `Admin@Demo123`
+   
+   📖 See [LOCALHOST_SETUP.md](./LOCALHOST_SETUP.md) for detailed setup instructions and troubleshooting.
 
 ---
 
@@ -269,12 +274,22 @@ See `.env.example` for complete configuration options including:
 
 ### Demo Mode (Development Only)
 
-When `DEMO_MODE=true` in `.env`:
+**Important**: Demo mode must be enabled for demo login to work.
 
+The `npm run dev` command automatically sets `DEMO_MODE=true`, but if you're running the server manually, ensure your `.env` file has:
+
+```env
+DEMO_MODE=true
+NODE_ENV=development
+```
+
+**Demo Login Credentials**:
 - **Email**: `admin@demo.com`
-- **Password**: `admin123`
+- **Password**: `Admin@Demo123`
 
 ⚠️ **Warning**: Demo credentials are automatically blocked in production (`NODE_ENV=production`)
+
+If you see "Demo mode is not enabled" error, see [LOCALHOST_SETUP.md](./LOCALHOST_SETUP.md) for troubleshooting.
 
 ---
 

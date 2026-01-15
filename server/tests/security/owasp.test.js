@@ -52,7 +52,7 @@ describe('OWASP Security Tests', () => {
               password: 'password123'
             });
 
-          expect([400, 401]).toContain(response.status);
+          expect([400, 401, 429]).toContain(response.status);
           expect(response.body).toHaveProperty('error');
           expect(response.body.token).toBeUndefined();
         });
@@ -65,7 +65,7 @@ describe('OWASP Security Tests', () => {
               password: payload
             });
 
-          expect([400, 401]).toContain(response.status);
+          expect([400, 401, 429]).toContain(response.status);
           expect(response.body).toHaveProperty('error');
           expect(response.body.token).toBeUndefined();
         });

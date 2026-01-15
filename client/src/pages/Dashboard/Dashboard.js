@@ -333,7 +333,7 @@ const Dashboard = () => {
   ], [stats, leasesExpiring, leasesExpiringThreeMonths, debtMaturing, totalDebtValue, theme]);
 
   return (
-    <Container maxWidth="xl" sx={{ py: 2 }}>
+    <Container maxWidth="xl" sx={{ py: 1.5 }}>
       {statsError && (
         <Alert severity="error" sx={{ mb: 2 }}>
           {statsError}
@@ -345,7 +345,7 @@ const Dashboard = () => {
           <CardSkeleton count={6} />
         ) : (
           statsCards.map((stat, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={2} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={2} key={index}>
               <Card 
                 sx={{ 
                   height: '100%',
@@ -366,7 +366,7 @@ const Dashboard = () => {
                 }}
                 onClick={() => navigate(stat.link)}
               >
-                <CardContent sx={{ p: 1.5 }}>
+                <CardContent sx={{ p: 1.5, '&:last-child': { pb: 1.5 } }}>
                   <Box 
                     sx={{
                       background: stat.gradient,
@@ -399,7 +399,7 @@ const Dashboard = () => {
         )}
 
         <Grid item xs={12}>
-          <Box sx={{ mt: 2, mb: 1 }}>
+          <Box sx={{ mt: 1.5, mb: 0.5 }}>
             <Typography variant="h5" sx={{ fontWeight: 700, mb: 0.25 }}>
               Sales Pipeline
             </Typography>
@@ -504,7 +504,7 @@ const Dashboard = () => {
                 })}
               </Grid>
             )}
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1.5 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
               <Button
                 variant="outlined"
                 size="small"
@@ -525,8 +525,8 @@ const Dashboard = () => {
           <Box 
             ref={activitySectionRef}
             sx={{ 
-              mt: 2, 
-              mb: 1,
+              mt: 1.5, 
+              mb: 0.5,
               opacity: activityVisible ? 1 : 0,
               transform: activityVisible ? 'translateY(0)' : 'translateY(20px)',
               transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
@@ -567,7 +567,7 @@ const Dashboard = () => {
               transitionDelay: '0.2s'
             }}
           >
-            <CardContent sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <CardContent sx={{ p: 2, display: 'flex', flexDirection: 'column', height: '100%', '&:last-child': { pb: 2 } }}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
                 <Typography variant="h6" sx={{ fontWeight: 700 }}>
                   Today's Tasks
@@ -610,14 +610,15 @@ const Dashboard = () => {
                     flexDirection: 'column',
                     alignItems: 'center', 
                     justifyContent: 'center',
-                    color: 'text.secondary'
+                    color: 'text.secondary',
+                    py: 2
                   }}
                 >
-                  <CheckCircleOutline sx={{ fontSize: 48, mb: 1.5, opacity: 0.3 }} />
+                  <CheckCircleOutline sx={{ fontSize: 36, mb: 1, opacity: 0.3 }} />
                   <Typography variant="body2" sx={{ fontWeight: 500 }}>
                     No tasks for today
                   </Typography>
-                  <Typography variant="caption" sx={{ mt: 0.5 }}>
+                  <Typography variant="caption" sx={{ mt: 0.25 }}>
                     You're all caught up!
                   </Typography>
                 </Box>

@@ -180,8 +180,8 @@ const CalendarWidget = ({ limit = 5, showHeader = true, onEventClick }) => {
   if (loading) {
     return (
       <Card>
-        <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 200 }}>
-          <CircularProgress />
+        <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 150, py: 2 }}>
+          <CircularProgress size={32} />
         </CardContent>
       </Card>
     );
@@ -229,9 +229,9 @@ const CalendarWidget = ({ limit = 5, showHeader = true, onEventClick }) => {
         />
       )}
       
-      <CardContent>
+      <CardContent sx={{ '&:last-child': { pb: 2 } }}>
         {/* Summary Stats */}
-        <Grid container spacing={2} sx={{ mb: 2 }}>
+        <Grid container spacing={2} sx={{ mb: 1.5 }}>
           <Grid item xs={6}>
             <Box sx={{ textAlign: 'center' }}>
               <Typography variant="h6" color="success.main" sx={{ fontWeight: 'bold' }}>
@@ -381,8 +381,8 @@ const CalendarWidget = ({ limit = 5, showHeader = true, onEventClick }) => {
 
         {/* Empty State */}
         {events.length === 0 && (
-          <Box sx={{ textAlign: 'center', py: 4 }}>
-            <CalendarToday sx={{ fontSize: 48, color: 'text.secondary', mb: 2 }} />
+          <Box sx={{ textAlign: 'center', py: 2 }}>
+            <CalendarToday sx={{ fontSize: 36, color: 'text.secondary', mb: 1 }} />
             <Typography variant="body2" color="text.secondary">
               No upcoming events
             </Typography>

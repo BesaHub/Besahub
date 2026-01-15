@@ -1,1 +1,9 @@
 node_modules
+
+# Build directories
+**/build/
+**/dist/
+
+# Environment files
+.env.local
+.env.*.local
