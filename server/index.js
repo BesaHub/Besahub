@@ -35,6 +35,7 @@ const communicationsRoutes = require('./routes/communications');
 const calendarRoutes = require('./routes/calendar');
 const aiAssistantRoutes = require('./routes/aiAssistant');
 const notificationsRoutes = require('./routes/notifications');
+const auditLogsRoutes = require('./routes/auditLogs');
 
 const app = express();
 const server = http.createServer(app);
@@ -273,7 +274,7 @@ app.get('/api/properties', (req, res) => {
     if (process.env.NODE_ENV === 'test') {
       const authHeader = req.header('Authorization');
       if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({ error: 'Unauthorized' });
+        return res.status(401).json({ error: 'No token provided. Authentication token required' });
       }
       const token = authHeader.replace('Bearer ', '');
       const jwt = require('jsonwebtoken');
@@ -549,6 +550,7 @@ app.use('/api/communications', communicationsRoutes);
 app.use('/api/calendar', calendarRoutes);
 app.use('/api/ai', aiAssistantRoutes);
 app.use('/api/notifications', notificationsRoutes);
+app.use('/api/audit-logs', auditLogsRoutes);
 
 // Socket.IO for real-time features
 io.on('connection', (socket) => {

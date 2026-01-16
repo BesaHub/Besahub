@@ -86,6 +86,7 @@
   "overrides": {
     "degenerator": "^3.0.1",
     "pac-resolver": "^7.0.1",
-    "ip": "^2.0.0"
+    "ip": "^2.0.0",
+    "got": "^11.8.5"
   }
 }

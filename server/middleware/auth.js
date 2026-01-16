@@ -77,7 +77,7 @@ const authMiddleware = async (req, res, next) => {
     const authHeader = req.header('Authorization');
 
     if (!authHeader) {
-      throw new UnauthorizedError('No token provided');
+      throw new UnauthorizedError('No token provided. Authentication token required');
     }
 
     const token = authHeader.replace('Bearer ', '');
